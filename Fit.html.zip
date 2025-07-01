@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Geliştirilmiş Fitness Hesaplayıcı</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+    .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    select, input, button { width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
+    button { background-color: #007bff; color: white; cursor: pointer; border: none; }
+    button:hover { background-color: #0056b3; }
+    .section { display: none; margin-top: 20px; }
+    .result { margin-top: 15px; font-weight: bold; white-space: pre-line; background-color: #e9f5ff; padding: 10px; border-radius: 5px; border-left: 5px solid #007bff; }
+    .checkbox-group { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px; }
+    label { display: block; }
+    small ul { margin: 2px 0 0 18px; color:#555; padding-left: 0;}
+    .not-baslik { font-weight: bold; color: black; margin-top: 10px; }
+    .not-metin { font-weight: normal; color: #555; margin-top: 4px; } /* Kalın olmayan metin */
+    .not-maddeler { list-style-position: inside; color: #555; margin-left: 0; padding-left: 0;}
+    .kirmizi { color: red; font-weight: bold; }
+    .yesil { color: green; font-weight: bold; }
+    .turuncu { color: orange; font-weight: bold;}
+    .hidden { display: none; } /* Kalça alanı için */
+    .formula { font-size: 0.9em; color: #666; margin-top: 5px; font-weight: normal; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+    .supplement-info { background-color: #f8f8f8; border: 1px solid #eee; padding: 10px; border-radius: 5px; margin-top: 15px; }
+    .supplement-info h5 { margin-top: 0; color: #007bff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Fitness Hesaplayıcı</h2>
+    <select id="hesapSec" onchange="showSection()">
+      <option value="">-- Hesaplama Türü Seçiniz --</option>
+      <option value="hepsi">Toplu Supplement Hesaplama</option>
+      <option value="protein">Günlük Protein İhtiyacı</option>
+      <option value="yag">Yağ Oranı & VKİ</option>
+      <option value="kreatin">Kreatin Dozu</option>
+      <option value="beta">Beta-Alanin Dozu</option>
+      <option value="sitrulin">Sitrülin Malat Dozu</option>
+      <option value="karnitin">L-Karnitin Dozu</option>
+      <option value="kafein">Kafein Dozu</option>
+    </select>
+
+    <div id="protein" class="section">
+      <h3>Günlük Protein İhtiyacı</h3>
+      <input type="number" id="p_kilo" placeholder="Kilonuz (kg)" />
+      <select id="p_hedef">
+        <option value="">-- Hedefinizi Seçiniz --</option>
+        <option value="koruma">Kilo Korumak (Maintenance)</option>
+        <option value="alma">Kilo Almak (Bulk)</option>
+        <option value="verme">Kilo Vermek (Definasyon)</option>
+      </select>
+      <button onclick="hesaplaProtein()">Hesapla</button>
+      <div id="proteinSonuc" class="result"></div>
+       <small>
+        <div class="supplement-info">
+            <h5>Protein Hakkında Bilgi:</h5>
+            <div class="not-metin">
+                **Ne işe yarar:** Kas onarımı ve büyümesi için temel yapı taşıdır. Tokluk hissini artırır, metabolizmayı hızlandırır.
+                <br>**Nasıl kullanılır:** Günlük ihtiyacı karşılamak üzere ana öğünlere ve ara öğünlere yayılarak alınır. Protein tozları pratik bir ek olabilir.
+                <br>**Etkisi ne zaman görülür:** Düzenli ve yeterli alımda kas gelişimi ve toparlanması üzerinde uzun vadeli etki gösterir. Akut olarak tokluk hissi sağlar.
+            </div>
+        </div>
+        <div class="not-baslik">Doz Aşımı (Hafifçe Yüksek Alım):</div>
+        <ul class="not-maddeler">
+          <li><span class="turuncu">Olası Olumsuz Etkileri:</span>
+            <ul>
+              <li>Hafif şişkinlik, gaz.</li>
+              <li>Enerji dengesinde hafif kaymalar (karbonhidrat ve yağ alımı azaldığında).</li>
+            </ul>
+          </li>
+          <li><span class="yesil">Olası Olumlu Etkileri:</span>
+            <ul>
+              <li>Belirli durumlarda tokluk hissini artırabilir, bu da kilo kontrolüne yardımcı olabilir.</li>
+              <li>Yoğun antrenman dönemlerinde kas yıkımını minimize etmeye yardımcı olabilir.</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="not-baslik">Aşırı Doz Aşımı (Çok Yüksek ve Uzun Süreli Alım):</div>
+        <ul class="not-maddeler">
+          <li><span class="kirmizi">Olumsuz Etkileri:</span>
+            <ul>
+              <li>Mide rahatsızlığı, bulantı, ishal.</li>
+              <li>Uzun süreli aşırı alım böbrekler üzerinde ek yük oluşturabilir (özellikle mevcut böbrek hastalığı olanlar için).</li>
+              <li>Vücutta sıvı dengesizliği.</li>
+            </ul>
+          </li>
+        </ul>
+      </small>
+    </div>
+
+    <div id="yag" class="section">
+      <h3>Yağ Oranı & Vücut Kitle İndeksi (VKİ)</h3>
+      <select id="y_cinsiyet" onchange="toggleHipInput()">
+        <option value="">-- Cinsiyetinizi Seçiniz --</option>
+        <option value="erkek">Erkek</option>
+        <option value="kadin">Kadın</option>
+      </select>
+      <input type="number" id="y_boy" placeholder="Boy (cm)" />
+      <input type="number" id="y_kilo" placeholder="Kilo (kg)" />
+      <input type="number" id="y_boyun" placeholder="Boyun Çevresi (cm)" />
+      <input type="number" id="y_bel" placeholder="Bel Çevresi (cm)" />
+      <input type="number" id="y_kalca" placeholder="Kalça Çevresi (cm)" class="hidden"/>
+      <button onclick="hesaplaYagOrani()">Hesapla</button>
+      <div id="yagSonuc" class="result"></div>
+      <div id="vkiSonuc" class="result"></div>
+
+      <h4>Vücut Yağ Oranı Kategorileri (Genel Rehber)</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Kategori</th>
+            <th>Erkekler (%)</th>
+            <th>Kadınlar (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Temel Yağ</td>
+            <td>2-5%</td>
+            <td>10-13%</td>
+          </tr>
+          <tr>
+            <td>Atletik</td>
+            <td>6-13%</td>
+            <td>14-20%</td>
+          </tr>
+          <tr>
+            <td>Fitness</td>
+            <td>14-17%</td>
+            <td>21-24%</td>
+          </tr>
+          <tr>
+            <td>Ortalama</td>
+            <td>18-24%</td>
+            <td>25-31%</td>
+          </tr>
+          <tr>
+            <td>Obez</td>
+            <td>25%+</td>
+            <td>32%+</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Vücut Kitle İndeksi (VKİ) Kategorileri</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>VKİ</th>
+            <th>Kategori</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&lt; 18.5</td>
+            <td>Zayıf</td>
+          </tr>
+          <tr>
+            <td>18.5 - 24.9</td>
+            <td>Normal Kilolu</td>
+          </tr>
+          <tr>
+            <td>25.0 - 29.9</td>
+            <td>Fazla Kilolu</td>
+          </tr>
+          <tr>
+            <td>30.0 - 34.9</td>
+            <td>Obezite (1. Derece)</td>
+          </tr>
+          <tr>
+            <td>35.0 - 39.9</td>
+            <td>Obezite (2. Derece)</td>
+          </tr>
+          <tr>
+            <td>&gt;= 40.0</td>
+            <td>Morbid Obezite (3. Derece)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="kreatin" class="section">
+      <h3>Kreatin</h3>
+      <input type="number" id="k_kilo" placeholder="Kilonuz (kg)" />
+      <button onclick="hesaplaKreatin()">Hesapla</button>
+      <div id="kreatinSonuc" class="result"></div>
+      <small>
+        <div class="supplement-info">
+            <h5>Kreatin Hakkında Bilgi:</h5>
+            <div class="not-metin">
+                **Ne işe yarar:** Kaslarda ATP üretimini artırarak kısa süreli, yüksek yoğunluklu egzersizlerde (ağırlık kaldırma, sprint) performansı iyileştirir. Güç artışı ve kas kütlesi kazanımına yardımcı olur.
+                <br>**Nasıl kullanılır:** Günlük idame dozu (hesaplanan miktar) her gün, antrenman günlerinde antrenman öncesi veya sonrası, dinlenme günlerinde günün herhangi bir saati alınabilir. Yükleme evresi isteğe bağlıdır.
+                <br>**Etkisi ne zaman görülür:** Yükleme evresiyle 5-7 gün içinde, yükleme yapılmadan 3-4 haftada kas depoları dolar ve etkileri görülmeye başlar.
+            </div>
+        </div>
+        <div class="not-baslik">Notlar:</div>
+        <div class="not-metin">
+            Yukarıdaki doz, kaslardaki kreatin depolarını dolu tutmak için gereken günlük **idame (maintenance) dozu**dur.
+            <br><b>İsteğe Bağlı Yükleme:</b> Depoları daha hızlı doldurmak için ilk 5-7 gün boyunca günde 15-20 gram (gün içine yayılmış 4-5 doz halinde) alınabilir, ancak bu zorunlu değildir. Sonrasında idame dozuna geçilir.
+        </div>
+        <div class="not-baslik">Doz Aşımı (Hafifçe Yüksek Alım):</div>
+        <ul class="not-maddeler">
+          <li><span class="turuncu">Olası Olumsuz Etkileri:</span>
+            <ul>
+              <li>Hafif mide rahatsızlığı, gaz.</li>
+              <li>Minimal ek su tutulumu.</li>
+            </ul>
+          </li>
+          <li><span class="yesil">Olası Olumlu Etkileri:</span>
+            <ul>
+              <li>Depoların daha hızlı dolumu (yükleme evresi yapıldığında görülen etki gibi).</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="not-baslik">Aşırı Doz Aşımı (Çok Yüksek Tek Seferlik veya Sürekli Alım):</div>
+        <ul class="not-maddeler">
+          <li><span class="kirmizi">Olumsuz Etkileri:</span>
+            <ul>
+              <li>Şiddetli mide krampları, bulantı, ishal, kusma.</li>
+              <li>Belirgin su tutulumu ve şişkinlik hissi.</li>
+              <li>Mevcut böbrek hastalığı olan bireylerde böbrek fonksiyonları üzerinde daha fazla baskı.</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="not-baslik kirmizi">Uyarı: Mevcut böbrek hastalığı olanlar kullanmadan önce mutlaka doktora danışmalıdır.</div>
+      </small>
+    </div>
+
+    <div id="beta" class="section">
+      <h3>Beta-Alanin</h3>
+      <input type="number" id="b_kilo" placeholder="Kilonuz (kg)" />
+      <button onclick="hesaplaBeta()">Hesapla</button>
+      <div id="betaSonuc" class="result"></div>
+       <small>
+        <div class="supplement-info">
+            <h5>Beta-Alanin Hakkında Bilgi:</h5>
+            <div class="not-metin">
+                **Ne işe yarar:** Kaslardaki karnozin seviyelerini artırarak laktik asit birikimini geciktirir. Bu, orta ve yüksek yoğunluklu egzersizlerde (60-240 saniye) yorgunluğun gecikmesine ve performans artışına yardımcı olur.
+                <br>**Nasıl kullanılır:** Günlük dozu (genellikle 3.2-6.4g) antrenman günlerinde antrenman öncesi alınabilir veya paresteziyi azaltmak için gün içine bölünebilir. Dinlenme günlerinde de alınmaya devam edilmelidir.
+                <br>**Etkisi ne zaman görülür:** Kas karnozin depolarının dolması 2-4 hafta sürebilir, etkileri genellikle bu sürenin sonunda hissedilir.
+            </div>
+        </div>
+        <div class="not-baslik">Max Önerilen Doz: <span class="kirmizi">6.4 g/gün</span></div>
+        <div class="not-metin">En yaygın yan etki parestezidir (ciltte zararsız karıncalanma hissi). Dozu gün içine bölmek bu etkiyi azaltabilir.</div>
+        <div class="not-baslik">Doz Aşımı (Hafifçe Yüksek Alım):</div>
+        <ul class="not-maddeler">
+          <li><span class="turuncu">Olası Olumsuz Etkileri:</span>
+            <ul>
+              <li>Daha belirgin ama genellikle tolere edilebilir karıncalanma hissi.</li>
+            </ul>
+          </li>
+          <li><span class="yesil">Olası Olumlu Etkileri:</span>
+            <ul>
+              <li>Performans artışında hafif bir ek fayda potansiyeli (ancak artan karıncalanma ile gelebilir).</li>
+              <li>Karnozin depolarının daha hızlı dolması</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="not-baslik">Aşırı Doz Aşımı (Çok Yüksek Alım):</div>
+        <ul class="not-maddeler">
+          <li><span class="kirmizi">Olumsuz Etkileri:</span>
+            <ul>
+              <li>Şiddetli, rahatsız edici ve yaygın karıncalanma (parestezi).</li>
+              <li>Baş dönmesi, mide bulantısı, kusma, ishal.</li>
+              <li>Nadir durumlarda kan basıncında dalgalanmalar.</li>
+            </ul>
+          </li>
+        </ul>
+      </small>
+    </div>
+
+    <div id="sitrulin" class="section">
+      <h3>Sitrülin Malat</h3>
+      <input type="number" id="s_kilo" placeholder="Kilonuz (kg)" />
+      <button onclick="hesaplaSitrulin()">Hesapla</button>
+      <div id="sitrulinSonuc" class="result"></div>
+      <small>
+        <div class="supplement-info">
+            <h5>Sitrülin Malat Hakkında Bilgi:</h5>
+            <div class="not-metin">
+                **Ne işe yarar:** Vücutta arginin'e dönüşerek nitrik oksit (NO) üretimini artırır. Bu, kan akışını iyileştirir, antrenman sırasında "pump" hissini artırır, kaslara besin ve oksijen iletimini destekler ve yorgunluğu geciktirir.
+                <br>**Nasıl kullanılır:** Genellikle antrenmandan 30-60 dakika önce alınır. Dinlenme günlerinde alınması zorunlu değildir ancak genel dolaşım sağlığı için düşünülebilir.
+                <br>**Etkisi ne zaman görülür:** İlk kullanımdan itibaren 30-60 dakika içinde etkileri (pump, dayanıklılık) hissedilebilir. Düzenli kullanımda daha belirginleşir.
+            </div>
+        </div>
+        <div class="not-baslik">Max Önerilen Doz: <span class="kirmizi">10 g/gün</span></div>
+        <div class="not-baslik">Doz Aşımı (Hafifçe Yüksek Alım):</div>
+        <ul class="not-maddeler">
+          <li><span class="turuncu">Olası Olumsuz Etkileri:</span>
+            <ul>
+              <li>Hafif mide rahatsızlığı veya gaz.</li>
+            </ul>
+          </li>
+          <li><span class="yesil">Olası Olumlu Etkileri:</span>
+            <ul>
+              <li>Daha güçlü "pump" etkisi ve vaskülarite artışı potansiyeli.</li>
+              <li>Teorik olarak antrenman performansında hafif bir ek artış.</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="not-baslik">Aşırı Doz Aşımı (Çok Yüksek Alım):</div>
+        <ul class="not-maddeler">
+          <li><span class="kirmizi">Olumsuz Etkileri:</span>
+            <ul>
+              <li>Şiddetli mide krampları, bulantı, ishal.</li>
+              <li>Kan basıncını belirgin şekilde düşürebilir (hipotansiyon riski artar), bu da baş dönmesi ve bayılmaya neden olabilir.</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="not-baslik kirmizi">Uyarı: Tansiyon ilacı kullananlar ve düşük tansiyon problemi olanlar dikkatli olmalıdır.</div>
+      </small>
+    </div>
+
+    <div id="karnitin" class="section">
+      <h3>L-Karnitin</h3>
+      <input type="number" id="l_kilo" placeholder="Kilonuz (kg)" />
+      <button onclick="hesaplaKarnitin()">Hesapla</button>
+      <div id="karnitinSonuc" class="result"></div>
+      <small>
+        <div class="supplement-info">
+            <h5>L-Karnitin Hakkında Bilgi:</h5>
+            <div class="not-metin">
+                **Ne işe yarar:** Yağ asitlerinin mitokondriye taşınmasına yardımcı olarak enerji üretimine katkıda bulunur. Genellikle yağ yakımı ve performans artışı ile ilişkilendirilir, ancak faydaları tartışmalıdır ve daha çok eksikliği olan bireylerde veya belirli koşullarda etkilidir.
+                <br>**Nasıl kullanılır:** Genellikle karbonhidrat içeren bir öğünle birlikte (emilimi artırmak için) veya antrenman öncesi alınır. Düzenli ve uzun süreli kullanım önemlidir.
+                <br>**Etkisi ne zaman görülür:** Etkileri hemen değil, uzun süreli ve düzenli kullanımda (haftalar/aylar) ortaya çıkar. Çoğu sağlıklı bireyde belirgin performans veya yağ yakımı etkisi görülmeyebilir.
+            </div>
+        </div>
+        <div class="not-baslik">Etkili Doz Aralığı: <span class="kirmizi">500 mg - 2000 mg/gün</span></div>
+        <div class="not-baslik">Doz Aşımı (Hafifçe Yüksek Alım):</div>
+        <ul class="not-maddeler">
+          <li><span class="turuncu">Olası Olumsuz Etkileri:</span>
+            <ul>
+              <li>Hafif mide rahatsızlığı.</li>
+            </ul>
+          </li>
+          <li><span class="yesil">Olası Olumlu Etkileri:</span>
+            <ul>
+              <li>Teorik olarak daha fazla yağ asidi taşınımı potansiyeli (ancak bu, genellikle ek yağ yakımı faydası sağlamaz).</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="not-baslik">Aşırı Doz Aşımı (Çok Yüksek Alım):</div>
+        <ul class="not-maddeler">
+          <li><span class="kirmizi">Olumsuz Etkileri:</span>
+            <ul>
+              <li>3000 mg/gün üzeri dozlarda mide bulantısı, karın ağrısı, ishal, kusma.</li>
+              <li>Vücut kokusunda artış ("balık kokusu" sendromu).</li>
+            </ul>
+          </li>
+        </ul>
+      </small>
+    </div>
+
+    <div id="kafein" class="section">
+      <h3>Kafein</h3>
+      <input type="number" id="c_kilo" placeholder="Kilonuz (kg)" />
+      <button onclick="hesaplaKafein()">Hesapla</button>
+      <div id="kafeinSonuc" class="result"></div>
+      <small>
+        <div class="supplement-info">
+            <h5>Kafein Hakkında Bilgi:</h5>
+            <div class="not-metin">
+                **Ne işe yarar:** Merkezi sinir sistemini uyararak uyanıklığı artırır, yorgunluğu azaltır, odaklanmayı güçlendirir ve egzersiz performansını (özellikle dayanıklılık ve güç) artırır.
+                <br>**Nasıl kullanılır:** Genellikle antrenmandan 30-60 dakika önce alınır. Kafein toleransı kişiden kişiye değiştiği için düşük dozla başlayıp kademeli artırmak önemlidir.
+                <br>**Etkisi ne zaman görülür:** Alımdan sonra 30-60 dakika içinde etkileri başlar ve 3-6 saat sürebilir.
+            </div>
+        </div>
+        <div class="not-baslik">Max Önerilen Tek Seferlik Doz: <span class="kirmizi">6 mg/kg</span></div>
+        <div class="not-baslik">Günlük Max Önerilen Toplam Doz: <span class="kirmizi">400 mg</span></div>
+        <div class="not-metin">Tolerans kişiden kişiye değişir. Düşük dozla başlayıp vücudunuzun tepkisini gözlemleyin.</div>
+
+        <div class="not-baslik">Doz Aşımı (Hafifçe Yüksek Alım: 400 mg - 1000 mg arası)</div>
+        <ul class="not-maddeler">
+          <li><span class="turuncu">Olası Olumsuz Etkileri:</span>
+            <ul>
+              <li>Hafif sinirlilik, huzursuzluk, kaygı.</li>
+              <li>Uykusuzluk, uykuya dalmada zorluk.</li>
+              <li>Hafif kalp çarpıntısı, baş ağrısı.</li>
+              <li>Mide rahatsızlığı, mide bulantısı.</li>
+            </ul>
+          </li>
+          <li><span class="yesil">Olası Olumlu Etkileri:</span>
+            <ul>
+              <li>Antrenman performansında ve odaklanmada kısa süreli hafif bir ek artış potansiyeli.</li>
+              <li>Daha yüksek uyanıklık hissi.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="not-baslik">Aşırı Doz Aşımı (Tehlikeli Dozlar)</div>
+        <ul class="not-maddeler">
+          <li>**1000 mg (1 gram) üzeri:**
+            <ul>
+              <li><span class="kirmizi">Olumsuz Etkileri:</span> Şiddetli mide bulantısı, kusma, ishal, titreme, panik atak benzeri semptomlar, belirgin kalp çarpıntısı ve düzensiz kalp atışları (aritmi). Tansiyonda ani yükseliş.</li>
+            </ul>
+          </li>
+          <li>**5000 mg (5 gram) üzeri:**
+            <ul>
+              <li><span class="kirmizi">Olumsuz Etkileri:</span> Aşırı derecede şiddetli titreme, kontrolsüz kas seğirmeleri, halüsinasyonlar, nöbetler, bilinç bulanıklığı, nefes darlığı, kalp krizi ve koma riski çok yüksektir. Hayati tehlike arz eder.</li>
+            </ul>
+          </li>
+          <li>**10000 mg (10 gram) üzeri:**
+            <ul>
+              <li><span class="kirmizi">Olumsuz Etkileri:</span> Akut kafein zehirlenmesi ve ölümcül sonuçlar büyük olasılıktır. Merkezi sinir sistemi ve kardiyovasküler sistem üzerinde geri dönüşü olmayan hasarlar meydana gelebilir.</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="not-baslik kirmizi">ÖNEMLİ UYARI:</div>
+        <div class="not-metin kirmizi">
+          Kardiyovasküler (kalp-damar) rahatsızlığı, yüksek tansiyonu, anksiyete bozukluğu veya uyku problemi olanlar kafein kullanımında ÇOK DİKKATLİ olmalı veya kaçınmalıdır. Yukarıda belirtilen **1 gram ve üzeri dozlar tehlikeli kabul edilir ve acil tıbbi müdahale gerektirebilir.** 
+        </div>
+      </small>
+    </div>
+
+    <div id="hepsi" class="section">
+      <h3>Toplu Supplement Hesaplama</h3>
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="chk_protein" /> Protein</label>
+        <label><input type="checkbox" id="chk_kreatin" /> Kreatin</label>
+        <label><input type="checkbox" id="chk_beta" /> Beta-Alanin</label>
+        <label><input type="checkbox" id="chk_sitrulin" /> Sitrülin Malat</label>
+        <label><input type="checkbox" id="chk_karnitin" /> L-Karnitin</label>
+        <label><input type="checkbox" id="chk_kafein" /> Kafein</label>
+      </div>
+      <input type="number" id="toplu_kilo" placeholder="Kilonuz (kg)" />
+      <select id="toplu_hedef">
+        <option value="">-- Hedefinizi Seçiniz --</option>
+        <option value="koruma">Kilo Korumak</option>
+        <option value="alma">Kilo Almak</option>
+        <option value="verme">Kilo Vermek</option>
+      </select>
+      <button onclick="hesaplaToplu()">Hesapla</button>
+      <div id="topluSonuc" class="result"></div>
+    </div>
+  </div>
+
+  <script>
+    function showSection() {
+      const sec = document.getElementById("hesapSec").value;
+      document.querySelectorAll(".section").forEach(div => div.style.display = "none");
+      if (sec) document.getElementById(sec).style.display = "block";
+    }
+
+    function toggleHipInput() {
+        const cinsiyet = document.getElementById('y_cinsiyet').value;
+        const kalcaInput = document.getElementById('y_kalca');
+        if (cinsiyet === 'kadin') {
+            kalcaInput.classList.remove('hidden');
+        } else {
+            kalcaInput.classList.add('hidden');
+        }
+    }
+
+    function hesaplaProtein() {
+      const kilo = parseFloat(document.getElementById("p_kilo").value);
+      const hedef = document.getElementById("p_hedef").value;
+      if (!kilo || !hedef) {
+        document.getElementById("proteinSonuc").innerHTML = "Lütfen kilonuzu ve hedefinizi girin.";
+        return;
+      }
+      let min = 1.4, max = 1.8;
+      let formulaText = "";
+
+      if (hedef === "alma") {
+        min = 1.6; max = 2.2;
+        formulaText = `Formül: Kilo (kg) x 1.6 - 2.2 g/kg`;
+      } else if (hedef === "verme") {
+        min = 1.8; max = 2.4;
+        formulaText = `Formül: Kilo (kg) x 1.8 - 2.4 g/kg`;
+      } else { // koruma
+        formulaText = `Formül: Kilo (kg) x 1.4 - 1.8 g/kg`;
+      }
+
+      document.getElementById("proteinSonuc").innerHTML = `Günlük protein ihtiyacınız: <b>${(kilo * min).toFixed(1)} – ${(kilo * max).toFixed(1)} gram.</b><div class="formula">${formulaText}</div>`;
+    }
+
+    function hesaplaYagOrani() {
+      const cinsiyet = document.getElementById('y_cinsiyet').value;
+      const boy = parseFloat(document.getElementById("y_boy").value);
+      const kilo = parseFloat(document.getElementById("y_kilo").value);
+      const bel = parseFloat(document.getElementById("y_bel").value);
+      const boyun = parseFloat(document.getElementById("y_boyun").value);
+      const kalca = parseFloat(document.getElementById("y_kalca").value);
+
+      if (!cinsiyet || !boy || !kilo || !bel || !boyun || (cinsiyet === 'kadin' && !kalca)) {
+        document.getElementById("yagSonuc").innerHTML = "Lütfen tüm alanları doldurun.";
+        document.getElementById("vkiSonuc").innerHTML = "";
+        return;
+      }
+
+      let yagOrani = 0;
+      let yagOraniFormula = "";
+      // ABD Donanması Vücut Yağ Formülü
+      if (cinsiyet === 'erkek') {
+          yagOrani = 495 / (1.0324 - 0.19077 * Math.log10(bel - boyun) + 0.15456 * Math.log10(boy)) - 450;
+          yagOraniFormula = `Erkek Formülü: 495 / (1.0324 - 0.19077 * log10(Bel - Boyun) + 0.15456 * log10(Boy)) - 450`;
+      } else if (cinsiyet === 'kadin') {
+          yagOrani = 495 / (1.29579 - 0.35004 * Math.log10(bel + kalca - boyun) + 0.22100 * Math.log10(boy)) - 450;
+          yagOraniFormula = `Kadın Formülü: 495 / (1.29579 - 0.35004 * log10(Bel + Kalça - Boyun) + 0.22100 * log10(Boy)) - 450`;
+      }
+
+      const vki = kilo / ((boy / 100) ** 2);
+      const vkiFormula = `VKİ Formülü: Kilo (kg) / (Boy (m) ^ 2)`;
+
+      document.getElementById("yagSonuc").innerHTML = `Tahmini Vücut Yağ Oranınız: <b>%${yagOrani.toFixed(1)}</b><div class="formula">${yagOraniFormula}</div>`;
+      document.getElementById("vkiSonuc").innerHTML = `Vücut Kitle İndeksiniz (VKİ): <b>${vki.toFixed(1)}</b><div class="formula">${vkiFormula}</div>`;
+    }
+
+    function hesaplaKreatin() {
+      const kilo = parseFloat(document.getElementById("k_kilo").value);
+      if (!kilo) {
+        document.getElementById("kreatinSonuc").innerHTML = "Lütfen kilonuzu girin.";
+        return;
+      }
+      const minDoz = (kilo * 0.03).toFixed(1);
+      const maxDoz = (kilo * 0.1).toFixed(1);
+      const formulaText = `Formül: Kilo (kg) x 0.03 - 0.1 g/kg`;
+      document.getElementById("kreatinSonuc").innerHTML = `Günlük Kreatin İdame Dozu: <b>${minDoz} – ${maxDoz} gram</b><div class="formula">${formulaText}</div>`;
+    }
+
+    function hesaplaBeta() {
+      const kilo = parseFloat(document.getElementById("b_kilo").value);
+      if (!kilo) {
+        document.getElementById("betaSonuc").innerHTML = "Lütfen kilonuzu girin.";
+        return;
+      }
+      const formulaText = `Formül: Genellikle 3.2 - 6.4 gram arası (kilodan bağımsız)`
+      document.getElementById("betaSonuc").innerHTML = `Günlük Beta-Alanin Dozu: <b>3.2 – 6.4 gram</b><div class="formula">${formulaText}</div>`;
+    }
+
+    function hesaplaSitrulin() {
+      const kilo = parseFloat(document.getElementById("s_kilo").value);
+      if (!kilo) {
+        document.getElementById("sitrulinSonuc").innerHTML = "Lütfen kilonuzu girin.";
+        return;
+      }
+      const formulaText = `Formül: Genellikle 6 - 8 gram arası (kilodan bağımsız)`;
+      document.getElementById("sitrulinSonuc").innerHTML = `Günlük Sitrülin Malat Dozu: <b>6 – 8 gram</b><div class="formula">${formulaText}</div>`;
+    }
+
+    function hesaplaKarnitin() {
+      const kilo = parseFloat(document.getElementById("l_kilo").value);
+      if (!kilo) {
+        document.getElementById("karnitinSonuc").innerHTML = "Lütfen kilonuzu girin.";
+        return;
+      }
+      const doz = Math.max(500, Math.min(2000, kilo * 20));
+      const formulaText = `Formül: Kilo (kg) x ~20 mg/kg (500mg - 2000mg arası)`;
+      document.getElementById("karnitinSonuc").innerHTML = `Günlük L-Karnitin Dozu: <b>${doz.toFixed(0)} mg</b><div class="formula">${formulaText}</div>`;
+    }
+
+    function hesaplaKafein() {
+      const kilo = parseFloat(document.getElementById("c_kilo").value);
+      if (!kilo) {
+        document.getElementById("kafeinSonuc").innerHTML = "Lütfen kilonuzu girin.";
+        return;
+      }
+      const alt = kilo * 3;
+      const ust = kilo * 6;
+      const formulaText = `Formül: Kilo (kg) x 3 - 6 mg/kg`;
+      document.getElementById("kafeinSonuc").innerHTML = `Antrenman Öncesi Kafein Dozu: <b>${alt.toFixed(0)} – ${ust.toFixed(0)} mg</b><div class="formula">${formulaText}</div>`;
+    }
+
+    function hesaplaToplu() {
+      const kilo = parseFloat(document.getElementById("toplu_kilo").value);
+      const hedef = document.getElementById("toplu_hedef").value;
+      const secilenler = document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked');
+      let output = "";
+
+      if (!kilo) {
+        document.getElementById("topluSonuc").innerHTML = "Lütfen kilonuzu girin.";
+        return;
+      }
+       if (secilenler.length === 0) {
+        document.getElementById("topluSonuc").innerHTML = "Lütfen en az bir supplement seçin.";
+        return;
+      }
+
+      if (document.getElementById("chk_protein").checked) {
+        if (!hedef) {
+            output += `Protein: Hedef seçimi gerekli\n`;
+        } else {
+            let min = 1.4, max = 1.8;
+            if (hedef === "alma") {
+              min = 1.6; max = 2.2;
+            } else if (hedef === "verme") {
+              min = 1.8; max = 2.4;
+            }
+            output += `Protein: ${(kilo * min).toFixed(1)} – ${(kilo * max).toFixed(1)} g\n`;
+        }
+      }
+
+      if (document.getElementById("chk_kreatin").checked) {
+        const minDoz = (kilo * 0.03).toFixed(1);
+        const maxDoz = (kilo * 0.1).toFixed(1);
+        output += `Kreatin: ${minDoz} – ${maxDoz} g\n`;
+      }
+
+      if (document.getElementById("chk_beta").checked) {
+        output += `Beta-Alanin: 3.2 – 6.4 g\n`;
+      }
+
+      if (document.getElementById("chk_sitrulin").checked) {
+        output += `Sitrülin Malat: 6 – 8 g\n`;
+      }
+
+       if (document.getElementById("chk_karnitin").checked) {
+        const doz = Math.max(500, Math.min(2000, kilo * 20));
+        output += `L-Karnitin: ${doz.toFixed(0)} mg\n`;
+      }
+
+      if (document.getElementById("chk_kafein").checked) {
+        output += `Kafein: ${(kilo * 3).toFixed(0)} – ${(kilo * 6).toFixed(0)} mg\n`;
+      }
+      
+      document.getElementById("topluSonuc").innerHTML = output.trim().replace(/\n/g, '<br>');
+    }
+  </script>
+</body>
+</html>
