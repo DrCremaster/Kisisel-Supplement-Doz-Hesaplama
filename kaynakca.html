@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaynakça - Fitness Hesaplayıcı</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .kaynakca-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fafafa;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .ana-baslik {
+      text-align: center;
+      font-size: 2rem;
+      color: #2c3e50;
+      margin: 20px 0 30px;
+      font-weight: 600;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ecf0f1;
+    }
+    .supplement-card {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-left: 4px solid #4361ee;
+      text-align: left;
+    }
+    .supplement-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .supplement-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin: 0;
+      text-align: left;
+    }
+    .toggle-icon {
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    .kaynak-listesi {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      padding: 0;
+      text-align: left;
+    }
+    .kaynak-listesi.active {
+      max-height: 400px; /* Sabit bir maksimum yükseklik belirledim */
+      overflow-y: auto; /* İçerik taşarsa kaydırma çubuğu çıksın */
+      padding-top: 15px;
+    }
+    .kaynak-item {
+      margin: 10px 0;
+      padding: 10px;
+      background: #f8f9fa;
+      border-radius: 5px;
+      line-height: 1.6;
+      text-align: left;
+    }
+    .kaynak-link {
+      color: #4361ee;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-top: 5px;
+    }
+    .kaynak-link:hover {
+      text-decoration: underline;
+    }
+    .geri-buton-container {
+      text-align: center;
+      margin: 50px 0 20px;
+    }
+    .geri-buton {
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .geri-buton:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .vurgu {
+      color: #d10000;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="kaynakca-container">
+    <h1 class="ana-baslik">BİLİMSEL KAYNAKLAR</h1>
+    
+    <div class="supplement-card" onclick="toggleKaynak('protein')">
+      <div class="supplement-header">
+        <h3 class="supplement-title">Protein</h3>
+        <span class="toggle-icon" id="protein-icon">▼</span>
+      </div>
+      <div class="kaynak-listesi" id="protein-kaynak">
+        <div class="kaynak-item">
+          <strong>Morton 2018 Meta-Analiz:</strong> Bu kapsamlı meta-analiz, antrenman yapan bireylerde kas hipertrofisi için <span class="vurgu">1.6-2.2 g/kg</span> protein alımının en etkili aralık olduğunu gösteriyor. Protein alımının bu aralığın üstüne çıkması ek bir fayda sağlamazken, altında kalması kas gelişimini olumsuz etkileyebilir.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/28698222/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Phillips & Van Loon 2011:</strong> Bu makale, protein sentezinin bir doygunluk noktası olduğunu ve <span class="vurgu">gereğinden fazla protein alımının</span> bu süreci hızlandırmadığını veya kas gelişimine ekstra katkı sağlamadığını belirtiyor. Vücut, fazla proteini enerji olarak yakar veya yağa dönüştürür.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/21262048/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Helms 2014:</strong> Definasyon (yağ yakımı) döneminde kalori açığı oluştuğunda kas kütlesinin korunması zorlaşır. Bu makale, bu dönemde kas kaybını en aza indirmek için <span class="vurgu">2.3-3.1 g/kg "yağsız vücut kütlesi"</span> başına protein alımını önermektedir.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/24092765/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Schoenfeld 2018 & Aragon 2017:</strong> Genel popülasyon ve amatör sporcular için protein ihtiyacını inceleyen bu iki çalışma, genel olarak <span class="vurgu">1.6-2.2 g/kg</span> aralığının yeterli olduğunu ve bu miktarın üzerinde tüketimin performans veya kas gelişimine kayda değer bir ek katkı sağlamadığını belirtiyor.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/29497353/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Stokes 2018:</strong> Bu makale, özellikle bitkisel bazlı beslenenler için önemlidir. Bezelye ve pirinç proteininin farklı amino asit profillerini birleştirerek, hayvansal protein kaynakları kadar <span class="vurgu">tam bir amino asit profili</span> oluşturulabileceğini ve bunun kas protein sentezini desteklediğini gösteriyor.
+          <a href="https://doi.org/10.1093/jn/nxy023" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Longland 2016:</strong> Bu çalışma, hipokalorik (kalori kısıtlaması) bir diyet uygulayan deneklerde yüksek protein alımının (2.4 g/kg) kas kütlesi kaybını önemli ölçüde engellediğini ve hatta <span class="vurgu">yağsız vücut kütlesini artırabildiğini</span> ortaya koymuştur.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/26817506/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="supplement-card" onclick="toggleKaynak('kreatin')">
+      <div class="supplement-header">
+        <h3 class="supplement-title">Kreatin</h3>
+        <span class="toggle-icon" id="kreatin-icon">▼</span>
+      </div>
+      <div class="kaynak-listesi" id="kreatin-kaynak">
+        <div class="kaynak-item">
+          <strong>Kreider 2017 Meta-Analiz:</strong> Uluslararası Spor Beslenmesi Topluluğu'nun (ISSN) bu pozisyon belgesi, kreatinin performans artışında en etkili ve güvenli takviyelerden biri olduğunu belirtir. <span class="vurgu">0.03-0.05 g/kg</span> günlük idame dozunun, kas kreatin depolarını dolu tutmak için yeterli olduğunu vurgular.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/28615996/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Kreider 2003 (5 Yıllık Çalışma):</strong> Kreatinin böbreklere zarar verip vermediği konusundaki endişeleri ele alan bu uzun süreli çalışma, kontrollü dozlarda düzenli kreatin kullanımının sağlıklı bireylerde <span class="vurgu">böbrek fonksiyonları üzerinde olumsuz bir etki yaratmadığını</span> göstermiştir.
+          <a href="https://doi.org/10.1519/1533-4287(2003)017<0106:LSEOCM>2.0.CO;2" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Cooper 2012:</strong> Kreatin takviyesinin faydalarını özetleyen bu makale, özellikle <span class="vurgu">kreatin monohidratın</span> performans ve kas kütlesi artışı üzerindeki etkilerini diğer kreatin formlarına göre daha kapsamlı şekilde destekleyen bilimsel kanıtlara sahip olduğunu vurgular. Ayrıca, kreatinin <span class="vurgu">antrenman hacmini ve gücünü</span> artırdığını belirtir.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/22134272/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Buford 2007:</strong> Bu çalışma, özellikle <span class="vurgu">vejetaryen ve vegan sporcuların</span> kreatin depolarının daha düşük olabileceğini ve bu nedenle takviyeye daha iyi yanıt verebileceğini belirtir. Bu grup için daha yüksek bir idame dozu (örneğin 0.075 g/kg) faydalı olabilir.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/17908291/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Rawson 2018:</strong> Yeni başlayan ve amatör sporcuların kreatinden nasıl faydalanabileceğini inceleyen bu makale, kreatin takviyesinin <span class="vurgu">3-5 g/gün</span> gibi standart dozlarda bile güç, dayanıklılık ve toparlanma üzerinde olumlu etkileri olduğunu göstermiştir.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/29497353/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="supplement-card" onclick="toggleKaynak('beta')">
+      <div class="supplement-header">
+        <h3 class="supplement-title">Beta-Alanin</h3>
+        <span class="toggle-icon" id="beta-icon">▼</span>
+      </div>
+      <div class="kaynak-listesi" id="beta-kaynak">
+        <div class="kaynak-item">
+          <strong>Hobson 2012 Meta-Analiz:</strong> Bu meta-analiz, beta-alaninin kas içi karnozin seviyelerini artırarak, özellikle yüksek yoğunluklu egzersizlerde yorgunluğu geciktirdiğini ve performansı artırdığını gösteriyor. <span class="vurgu">4-6 g/gün</span> dozunun en etkili aralık olduğu belirtilir.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/22451437/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Artioli 2010:</strong> Bu çalışma, düzenli beta-alanin takviyesinin <span class="vurgu">4-6 hafta</span> gibi bir süre sonunda kas karnozin depolarını doldurarak, özellikle 60-240 saniye süren yüksek yoğunluklu egzersizlerde <span class="vurgu">dayanıklılık performansını</span> önemli ölçüde artırdığını rapor etmiştir.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/20300003/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Saunders 2017:</strong> Bu makale, beta-alaninin genel olarak güvenli bir takviye olduğunu ve yan etki olarak görülen karıncalanmanın zararsız olduğunu vurgular. Vücut ağırlığına bağlı olarak <span class="vurgu">0.1 g/kg'ye kadar</span> günlük dozların etkin ve güvenli olduğunu belirtir.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/28615996/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="supplement-card" onclick="toggleKaynak('sitrulin')">
+      <div class="supplement-header">
+        <h3 class="supplement-title">Sitrülin Malat</h3>
+        <span class="toggle-icon" id="sitrulin-icon">▼</span>
+      </div>
+      <div class="kaynak-listesi" id="sitrulin-kaynak">
+        <div class="kaynak-item">
+          <strong>Rhodes 2021 Meta-Analiz:</strong> Bu meta-analiz, sitrülin malatın özellikle yüksek hacimli antrenmanlarda <span class="vurgu">kas yorgunluğunu azalttığını</span> ve performansı artırdığını gösterir. Optimal doz olarak, egzersizden önce alınan <span class="vurgu">6-8 g/gün</span> miktarını işaret eder.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/33466487/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Pérez-Guisado 2010:</strong> Amatör ağırlık kaldıran sporcularda yapılan bu çalışma, 8 gram sitrülin malat alımının, <span class="vurgu">yapılan tekrar sayısını artırarak</span> antrenman hacminde önemli bir iyileşme sağladığını rapor etmiştir.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/20386132/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Bendahan 2002:</strong> Sitrülinin ATP üretimini artırarak enerji metabolizmasına olan etkisini inceleyen bu makale, 0.15 g/kg dozunun egzersiz sırasında <span class="vurgu">kas ATP üretimini hızlandırdığını</span> ve fosfokreatin toparlanmasını kolaylaştırdığını bulmuştur.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/11792871/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="supplement-card" onclick="toggleKaynak('kafein')">
+      <div class="supplement-header">
+        <h3 class="supplement-title">Kafein</h3>
+        <span class="toggle-icon" id="kafein-icon">▼</span>
+      </div>
+      <div class="kaynak-listesi" id="kafein-kaynak">
+        <div class="kaynak-item">
+          <strong>Southward 2018 Meta-Analiz:</strong> Kafeinin egzersiz performansı üzerindeki etkilerini inceleyen bu meta-analiz, <span class="vurgu">3-6 mg/kg</span> doz aralığının, özellikle dayanıklılık ve güç antrenmanlarında optimal performans artışı sağladığını belirtiyor.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/30068048/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Goldstein 2010:</strong> Bu makale, kafein kullanımında dikkat edilmesi gerekenleri ele alır ve <span class="vurgu">400 mg/gün</span> dozunun genel olarak sağlıklı yetişkinler için güvenli bir üst sınır olduğunu belirtir. Düzenli kullanımda tolerans gelişebileceği ve etkinliğin azalabileceği de vurgulanır.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/20211210/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Temple 2017:</strong> Kafeinin kardiyovasküler sistem üzerindeki etkilerini inceleyen bu çalışma, yüksek dozlarda kafein alımının <span class="vurgu">geçici olarak tansiyon ve kalp ritmini artırabileceğini</span> gösterir. Özellikle kalp rahatsızlığı olan veya hassas bireyler için bu durumun risk taşıyabileceği belirtilir.
+          <a href="https://doi.org/10.1016/j.yfrne.2017.04.002" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="supplement-card" onclick="toggleKaynak('karnitin')">
+      <div class="supplement-header">
+        <h3 class="supplement-title">L-Karnitin</h3>
+        <span class="toggle-icon" id="karnitin-icon">▼</span>
+      </div>
+      <div class="kaynak-listesi" id="karnitin-kaynak">
+        <div class="kaynak-item">
+          <strong>Fielding 2018:</strong> Bu makale, L-Karnitin'in kas dokusunda depolanarak yağ asitlerinin enerji için mitokondriye taşınmasına yardımcı olduğunu, ancak bu etkinin takviye ile artırılması için <span class="vurgu">15-30 mg/kg</span> gibi yüksek dozların ve karbonhidratla birlikte alımının gerekebileceğini belirtir.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/29308661/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Wall 2011:</strong> Düzenli L-karnitin takviyesinin egzersiz sonrası toparlanmaya olan etkisini araştıran bu çalışma, 2 g/gün dozunun <span class="vurgu">kas hasarını azalttığını</span> ve toparlanma sürecini hızlandırdığını rapor etmiştir.
+          <a href="https://pubmed.ncbi.nlm.nih.gov/21362068/" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Stephens 2006:</strong> Yağ yakımı takviyesi olarak yaygın şekilde pazarlanan L-karnitinin etkisini inceleyen bu çift-kör, plasebo kontrollü çalışma, L-karnitinin doğrudan <span class="vurgu">yağ yakımı üzerinde kayda değer bir etkisi olmadığını</span> bulmuştur.
+          <a href="https://doi.org/10.1152/japplphysiol.00356.2006" class="kaynak-link" target="_blank">Makaleyi Görüntüle</a>
+        </div>
+        <div class="kaynak-item">
+          <strong>Examine.com:</strong> Bu sayfa, L-karnitin hakkında mevcut tüm bilimsel araştırmaları derleyerek, yağ yakımı üzerindeki etkisinin <span class="vurgu">yeterli kanıtla desteklenmediğini</span> ancak toparlanma ve antrenman performansı gibi diğer alanlarda faydalarının olabileceğini özetliyor.
+          <a href="https://examine.com/supplements/l-carnitine/" class="kaynak-link" target="_blank">Kaynağı Görüntüle</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="geri-buton-container">
+      <a href="index.html" class="geri-buton">Ana Sayfaya Dön</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleKaynak(supplementId) {
+    const kaynakListesi = document.getElementById(`${supplementId}-kaynak`);
+    const toggleIcon = document.getElementById(`${supplementId}-icon`);
+    
+    // Toggle sınıfını ekle/kaldır
+    kaynakListesi.classList.toggle('active');
+    
+    // Ok işaretini güncelle
+    if (kaynakListesi.classList.contains('active')) {
+      toggleIcon.textContent = '▲';
+    } else {
+      toggleIcon.textContent = '▼';
+    }
+  }
+</script>
+</body>
+</html>
