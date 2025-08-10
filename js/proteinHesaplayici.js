@@ -34,7 +34,6 @@ function hesaplaProtein() {
     const content = `
         <div class="result-value">${(kilo * min).toFixed(1)} - ${(kilo * max).toFixed(1)} gram</div>
         <div class="interpretation">
-            <p><strong>Önerilen günlük protein alımı:</strong></p>
             <p>${recommendation}</p>
             <p class="formula">${formulaText}</p>
         </div>

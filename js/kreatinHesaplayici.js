@@ -17,7 +17,7 @@ function hesaplaKreatin() {
     <div class="result-value">${idameMin} - ${idameMax} g/gün</div>
     <div class="interpretation">
         <p><span class="formula-text">Standart:</span> ${idameMin} - ${idameMax} g <strong><span class="formula">(0.03-0.05 g/kg)</span></strong></p>
-        <p><span class="formula-text">Aşırı ihtiyaç:</span> ${asiriGereksinimMin} - ${asiriGereksinimMax} g <strong><span class="formula">(0.05-0.1 g/kg)</span></strong></p>
+        <p><span class="formula-text">Aşırı ihtiyaç(vegan/ağır sporcu):</span> ${asiriGereksinimMin} - ${asiriGereksinimMax} g <strong><span class="formula">(0.05-0.1 g/kg)</span></strong></p>
         <p><span class="formula-text">Yükleme:</span> ${yuklemeDoz} g <strong><span class="formula">(0.3 g/kg × 5-7 gün)</span></strong></p>
     </div>
 `;

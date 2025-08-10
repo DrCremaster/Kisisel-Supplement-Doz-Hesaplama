@@ -51,14 +51,14 @@ function hesaplaToplu() {
     // Sitrülin (sitrulinHesaplayici.js ile aynı)
     if (document.getElementById("chk_sitrulin").checked) {
         const minDoz = (kilo * 0.10).toFixed(1);
-        const maxDoz = (kilo * 0.12).toFixed(1);
+        const maxDoz = (kilo * 0.15).toFixed(1);
         output += `<p><strong>Sitrülin Malat:</strong> ${minDoz} – ${maxDoz} g/gün</p>`;
     }
 
     // Karnitin (karnitinHesaplayici.js ile aynı)
     if (document.getElementById("chk_karnitin").checked) {
-        const minDozMg = (kilo * 15).toFixed(0);
-        const maxDozMg = (kilo * 30).toFixed(0);
+        const minDozMg = (kilo * 20).toFixed(0);
+        const maxDozMg = (kilo * 40).toFixed(0);
         output += `<p><strong>L-Karnitin:</strong> ${minDozMg} – ${maxDozMg} mg/gün</p>`;
     }
 
@@ -67,6 +67,34 @@ function hesaplaToplu() {
         const alt = (kilo * 3).toFixed(0);
         const ust = (kilo * 6).toFixed(0);
         output += `<p><strong>Kafein:</strong> ${alt} – ${ust} mg</p>`;
+    }
+
+    // BCAA
+    if (document.getElementById("chk_bcaa")?.checked) {
+        const minDoz = (kilo * 0.070).toFixed(1);
+        const maxDoz = (kilo * 0.100).toFixed(1);
+        output += `<p><strong>BCAA:</strong> ${minDoz} – ${maxDoz} g/gün</p>`;
+    }
+
+    // Glutamin
+    if (document.getElementById("chk_glutamin")?.checked) {
+        const minDoz = (kilo * 0.10).toFixed(1);
+        const maxDoz = (kilo * 0.15).toFixed(1);
+        output += `<p><strong>Glutamin:</strong> ${minDoz} – ${maxDoz} g/gün</p>`;
+    }
+
+    // Arjinin
+    if (document.getElementById("chk_arjinin")?.checked) {
+        const minDoz = (kilo * 0.075).toFixed(1);
+        const maxDoz = (kilo * 0.100).toFixed(1);
+        output += `<p><strong>Arjinin:</strong> ${minDoz} – ${maxDoz} g/gün</p>`;
+    }
+
+    // EAA
+    if (document.getElementById("chk_eaa")?.checked) {
+        const minDoz = (kilo * 0.1).toFixed(1);
+        const maxDoz = (kilo * 0.2).toFixed(1);
+        output += `<p><strong>EAA:</strong> ${minDoz} – ${maxDoz} g/gün</p>`;
     }
 
     output += "</div>";
