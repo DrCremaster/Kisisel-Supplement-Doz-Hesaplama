@@ -1,636 +1,1226 @@
+/* style.css'e ekle */
+#dropdownButton {
+  position: relative;
+  z-index: 101; /* Diğer elementlerden daha yüksek bir değer */
+  pointer-events: auto; /* Tıklama olaylarının yakalanmasını garanti eder */
+}
+#dropdownContent {
+  z-index: 100;
+}
 /* GENEL STİL RESET VE DEĞİŞKENLER */
 :root {
-  --primary-color: #4361ee;
-  --primary-light: #4895ef;
-  --secondary-color: #3f37c9;
-  --dark-color: #1a1a2e;
-  --light-color: #f8f9fa;
-  --success-color: #4cc9f0;
-  --warning-color: #f72585;
-  --danger-color: #ef233c;
-  --info-color: #7209b7;
-  --text-color: #333;
-  --background-light: #f5f7fa;
-  --background-white: #ffffff;
-  --primary-light-bg-color: #f0f7ff;
-  --warning-light-bg-color: #fff3cd;
+    --primary-color: #4361ee;
+    --primary-light: #4895ef;
+    --secondary-color: #3f37c9;
+    --dark-color: #1a1a2e;
+    --light-color: #f8f9fa;
+    --success-color: #4cc9f0;
+    --warning-color: #f72585;
+    --danger-color: #ef233c;
+    --info-color: #7209b7;
+    --text-color: #333;
+    --background-light: #f5f7fa;
+    --background-white: #ffffff;
+    --primary-light-bg-color: #e6f0ff;
+    --warning-light-bg-color: #fff3cd;
+    --border-color: #ddd;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
 
-  --border-radius: 8px;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
+/* Koyu tema değişkenleri - OKUNAKLILIK İÇİN YENİLENDİ */
+html[data-theme='dark'] {
+    --primary-color: #3A86FF;
+    --primary-light: #5FAAFF;
+    --secondary-color: #457B9D;
+    --dark-color: #FFFFFF;
+    --light-color: #121212;
+    --text-color: #E0E0E0;
+    --background-light: #181A1B;
+    --background-white: #2E2F30;
+    --primary-light-bg-color: #334756;
+    --warning-light-bg-color: #3E2E18;
+    --border-color: #555555;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 /* TEMEL RESET VE YAPILANDIRMA */
 *, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html, body {
-  height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--background-light);
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* TÜM SAYFALARIN GENEL YAPISI */
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* ANA KONTEYNER */
 .container {
-  max-width: 800px;
-  width: 90%;
-  margin: 20px auto 0;
-  padding: 25px 30px;
-  background: var(--background-white);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  display: flex;
-  flex-direction: column;
-  flex: 1; 
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto 0;
+    padding: 25px 30px;
+    background: var(--background-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* ANA SAYFA İÇİN ÖZEL KURAL */
 body.anapage .container {
-  min-height: calc(100vh - 40px);
-  flex: none;
+    min-height: calc(100vh - 40px);
+    flex: none;
 }
 
 /* AÇILIR MENÜ STİLLERİ */
 .dropdown-container {
-  position: relative;
-  width: 100%;
-  margin-bottom: 20px;
-  z-index: 10;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    z-index: 10;
 }
 
 .dropdown-button {
-  width: 100%;
-  padding: 10px 15px;
-  background-color: var(--light-color); 
-  color: var(--text-color); 
-  border: 1px solid #ddd;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: var(--transition);
+    width: 100%;
+    padding: 10px 15px;
+    background-color: var(--light-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: var(--transition);
 }
 
 .dropdown-button:hover {
-  background-color: #e9ecef; 
+    background-color: var(--border-color);
+}
+
+html[data-theme='dark'] .dropdown-button {
+    background-color: #333;
+    color: var(--dark-color);
+    border-color: #555;
+}
+
+html[data-theme='dark'] .dropdown-button:hover {
+    background-color: #444;
 }
 
 .dropdown-icon {
-  font-size: 0.8rem;
-  color: var(--primary-color);
-  transition: transform 0.3s ease;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
 }
 
 .dropdown-button.active .dropdown-icon {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .dropdown-content {
-  display: none;
-  overflow-y: hidden;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  max-height: 0;
-  background-color: var(--background-white);
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
-  box-shadow: var(--box-shadow);
-  border: 1px solid #ddd;
-  border-top: none;
-  transition: max-height 0.4s ease-out;
+    will-change: transform, opacity, max-height; /* Tarayıcıya ön hazırlık yapmasını söyler */
+    transition: max-height 0.4s ease-in, opacity 0.4s ease-in; /* Daha kısa ve etkili bir geçiş */
+    max-height: 0;
+    opacity: 0;
+    overflow-y: hidden;
+ /* Kaydırma çubuğunu gizler */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-white);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    z-index: 100;
+    pointer-events: none;
 }
 
 .dropdown-content.open {
-  display: block;
-  max-height: 200px;
-  overflow-y: auto;
+    max-height: 400px; /* Menünün açılacağı maksimum yükseklik */
+    opacity: 1;
+    overflow-y: auto; /* Açıldığında kaydırma çubuğunu gösterir */
+    pointer-events: auto;
 }
 
+
 #hesapListesi {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 #hesapListesi li {
-  padding: 8px 15px; /* Daha küçük padding */
-  cursor: pointer;
-  border-bottom: 1px solid #eee;
-  transition: background-color 0.2s ease;
-  font-size: 0.9rem; /* Daha küçük font boyutu */
+    padding: 8px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease;
+    font-size: 0.9rem;
 }
 
 #hesapListesi li:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 #hesapListesi li:hover {
-  background-color: var(--primary-light-bg-color);
-  color: var(--primary-color);
+    background-color: var(--primary-light-bg-color);
+    color: var(--primary-color);
 }
 
 /* ANA SAYFA BUTONU STİLİ */
 .home-button {
-  display: block;
-  width: 100%;
-  text-align: center;
-  padding: 10px 15px;
-  background-color: var(--primary-color);
-  color: var(--background-white);
-  font-weight: 600;
-  border-radius: var(--border-radius);
-  text-decoration: none;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
 .home-button:hover {
-  background-color: var(--secondary-color);
+    background-color: var(--secondary-color);
 }
 
 /* BÖLÜM BOŞLUKLARI */
 .page-bottom-spacer {
-  min-height: 40vh;
+    min-height: 40vh;
 }
 
 /* ANA SAYFA DIŞINDAKİ SAYFALAR İÇİN ESNEK BOŞLUK */
 .main-scroll-content {
-  flex-grow: 1;
-  padding-bottom: 20px;
+    flex-grow: 1;
+    padding-bottom: 20px;
 }
 
 /* BAŞLIKLAR */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--dark-color);
-  margin-top: 0;
-  margin-bottom: 0.5em;
+    color: var(--dark-color);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    transition: color 0.3s ease;
 }
 
 h1 {
-  color: var(--primary-color);
-  margin-bottom: 25px;
-  font-size: 2rem;
-  text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 2rem;
+    text-align: center;
 }
 
 h2 {
-  color: var(--primary-color);
-  margin-bottom: 25px;
-  font-size: 1.8rem;
-  text-align: center;
+    color: var(--primary-color);
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    text-align: center;
 }
 
 h3 {
-  font-size: 1.4rem;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid var(--primary-light);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-light);
 }
 
 /* FORM ELEMANLARI */
-select,
-input:not([type="checkbox"]),
-button {
-  width: 100%;
-  padding: 10px 12px;
-  margin-top: 8px;
-  border-radius: var(--border-radius);
-  border: 1px solid #ddd;
-  font-size: 0.95rem;
-  transition: var(--transition);
+select, input:not([type="checkbox"]), button {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 8px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    font-size: 0.95rem;
+    transition: var(--transition);
+    background-color: var(--background-white);
+    color: var(--text-color);
 }
 
-select:focus,
-input:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+select:focus, input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+html[data-theme='dark'] select, html[data-theme='dark'] input:not([type="checkbox"]) {
+    background-color: #3a3a3a;
+    color: var(--dark-color);
+    border-color: #555;
+}
+
+html[data-theme='dark'] select:focus, html[data-theme='dark'] input:focus {
+    box-shadow: 0 0 0 3px rgba(142, 202, 230, 0.3);
 }
 
 button {
-  background-color: var(--primary-color);
-  color: var(--background-white);
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  margin-top: 15px;
-  padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    padding: 10px;
 }
 
 button:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-2px);
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
 button:active {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 /* İÇERİK ALANI */
 .section {
-  display: none;
-  margin-top: 25px;
-  padding-top: 20px;
-  animation: fadeIn 0.5s ease forwards;
+    display: none;
+    margin-top: 25px;
+    padding-top: 20px;
+    animation: fadeIn 0.5s ease forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* SONUÇ GÖSTERİMLERİ */
+/* SONUÇ GÖSTERİMLERİ - GÜNCELLENDİ */
 .result {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: var(--border-radius);
-  background-color: #f0f7ff;
-  border-left: 4px solid var(--primary-color);
-  color: var(--dark-color);
-  line-height: 1.6;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-light-bg-color);
+    border-left: 4px solid var(--primary-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+/* Koyu tema için result stili */
+html[data-theme='dark'] .result {
+    background-color: var(--primary-light-bg-color);
+    color: var(--dark-color);
 }
 
 .result b {
-  color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .result-card {
-  background: var(--background-white);
-  border-radius: var(--border-radius);
-  padding: 20px;
-  margin: 20px 0;
-  box-shadow: var(--box-shadow);
-  border-left: 4px solid var(--primary-color);
+    background: var(--background-white);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: var(--box-shadow);
+    border-left: 4px solid var(--primary-color);
+    color: var(--text-color);
+}
+
+/* Koyu tema için result-card stili */
+html[data-theme='dark'] .result-card {
+    background-color: #2C2C2C;
+    color: #E0E0E0;
 }
 
 .result-value {
-  font-size: 1.6rem;
-  font-weight: 700;
-  text-align: center;
-  margin: 15px 0;
-  color: var(--primary-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 15px 0;
+    color: var(--primary-color);
 }
 
 .interpretation {
-  text-align: center;
-  color: #555;
-  font-size: 0.9rem;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+/* Koyu tema için interpretation stili */
+html[data-theme='dark'] .interpretation {
+    color: #A0A0A0;
 }
 
 /* CHECKBOX GRUPLARI */
 .checkbox-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 15px 0;
 }
 
 .checkbox-group label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 8px 12px;
-  background: #f0f4f8;
-  border-radius: var(--border-radius);
-  transition: var(--transition);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 12px;
+    background: var(--background-white);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    color: var(--text-color);
 }
 
 .checkbox-group label:hover {
-  background: #e0e8f0;
+    background: var(--primary-light-bg-color);
+}
+
+html[data-theme='dark'] .checkbox-group label {
+    background: #3a3a3a;
+    color: var(--dark-color);
+}
+
+html[data-theme='dark'] .checkbox-group label:hover {
+    background: #4a4a4a;
 }
 
 .checkbox-group input[type="checkbox"] {
-  width: auto;
-  margin-right: 8px;
-  margin-top: 0;
+    width: auto;
+    margin-right: 8px;
+    margin-top: 0;
 }
 
 /* BİLGİ NOTLARI */
 .not-baslik {
-  font-weight: 600;
-  color: var(--dark-color);
-  margin: 15px 0 8px;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 15px 0 8px;
 }
 
 .not-metin {
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 10px;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+html[data-theme='dark'] .not-metin {
+    color: var(--text-color);
 }
 
 .not-maddeler {
-  padding-left: 20px;
-  margin: 10px 0;
+    padding-left: 20px;
+    margin: 10px 0;
+    color: var(--text-color);
 }
 
 /* RENK SINIFLARI */
 .kirmizi {
-  color: var(--danger-color);
+    color: var(--danger-color);
 }
 
 .yesil {
-  color: #28a745;
+    color: #28a745;
 }
 
 .turuncu {
-  color: #f8961e;
+    color: #f8961e;
 }
 
 /* FORMÜL VE TABLOLAR */
 .formula {
-  font-size: 0.8rem;
-  color: #666;
-  margin-top: 5px;
-  font-style: italic;
+    font-size: 0.8rem;
+    color: var(--text-color);
+    margin-top: 5px;
+    font-style: italic;
+}
+
+html[data-theme='dark'] .formula {
+    color: #A0A0A0; /* Koyu temada da okunur olması için rengini değiştirdim */
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 15px 0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    background-color: var(--background-white);
 }
 
 th, td {
-  padding: 10px 12px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
 }
 
 th {
-  background-color: var(--primary-light);
-  color: var(--background-white);
-  font-weight: 600;
+    background-color: var(--primary-light);
+    color: var(--background-white);
+    font-weight: 600;
 }
 
 tr:nth-child(even) {
-  background-color: #f8f9fa;
+    background-color: var(--background-light);
 }
 
 tr:hover {
-  background-color: #f1f5ff;
+    background-color: var(--primary-light-bg-color);
+}
+
+html[data-theme='dark'] th {
+    background-color: var(--primary-light);
+}
+
+html[data-theme='dark'] tr:nth-child(even) {
+    background-color: #333a4a;
+}
+
+html[data-theme='dark'] tr:hover {
+    background-color: #444b5e;
 }
 
 /* UYARI MESAJLARI */
 .disclaimer {
-  margin: 25px 0;
-  padding: 15px;
-  border-radius: var(--border-radius);
-  text-align: center;
-  font-weight: 500;
-  background-color: #f8d7da;
-  border-left: 4px solid var(--danger-color);
-  color: var(--danger-color);
+    margin: 25px 0;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 500;
+    background-color: #f8d7da;
+    border-left: 4px solid var(--danger-color);
+    color: var(--danger-color);
 }
 
 .general-disclaimer {
-  background-color: var(--warning-light-bg-color);
-  border-left: 4px solid #ffc107;
-  color: #856404;
-  margin-bottom: 30px;
+    background-color: var(--warning-light-bg-color);
+    border-left: 4px solid #ffc107;
+    color: #856404;
+    margin-bottom: 30px;
+}
+
+html[data-theme='dark'] .general-disclaimer {
+    background-color: #5c4f2e;
+    border-left-color: #d4ac0d;
+    color: #e0e0e0;
 }
 
 /* FORM GRUPLARI */
 .form-group {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 500;
-  color: var(--dark-color);
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--dark-color);
+    transition: color 0.3s ease;
 }
 
 .optional {
-  font-size: 0.75rem;
-  color: #7f8c8d;
-  margin-top: 4px;
+    font-size: 0.75rem;
+    color: var(--text-color);
+    margin-top: 4px;
 }
 
 .input-warning {
-  color: var(--danger-color);
-  font-size: 0.8rem;
-  margin-top: 5px;
-  display: block;
+    color: var(--danger-color);
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: block;
 }
 
 /* SUPPLEMENT BİLGİ ALANLARI */
 .supplement-section-info {
-  margin-top: 30px;
-  padding: 20px;
-  border-radius: var(--border-radius);
-  background: linear-gradient(135deg, #f0f7ff, #e6f0fa);
-  box-shadow: var(--box-shadow);
-  border: 1px solid var(--primary-light);
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background: var(--primary-light-bg-color);
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--primary-light);
+    color: var(--text-color);
+}
+
+html[data-theme='dark'] .supplement-section-info {
+    background: #333a4a;
+    border-color: #444b5e;
+    color: var(--text-color);
 }
 
 .supplement-section-info h5 {
-  color: var(--primary-color);
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  border-bottom: 1px dashed var(--primary-light);
-  padding-bottom: 5px;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed var(--primary-light);
+    padding-bottom: 5px;
 }
 
+/* Sıkça Sorulan Sorular Bölümü için Özel Stil */
+.faq-section {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+}
+
+.faq-section .faq-header {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 5px;
+}
+
+html[data-theme='dark'] .faq-section {
+    background-color: #2e2f30;
+    border-color: #555555;
+}
+
+html[data-theme='dark'] .faq-section .faq-header {
+    color: var(--primary-light);
+    border-bottom-color: #444b5e;
+}
+
+/* Yeni eklenen info-section stili */
+.info-section {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+}
+
+.info-section .info-header {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 5px;
+}
+
+html[data-theme='dark'] .info-section {
+    background-color: #2e2f30;
+    border-color: #555555;
+}
+
+html[data-theme='dark'] .info-section .info-header {
+    color: var(--primary-light);
+    border-bottom-color: #444b5e;
+}
+
+
 .doz-bilgisi {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: var(--border-radius);
-  background-color: #fff9e6;
-  border-left: 5px solid #ffc107;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    background-color: var(--warning-light-bg-color);
+    border-left: 5px solid #ffc107;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    color: var(--text-color);
 }
 
 .doz-bilgisi.danger {
-  background-color: #ffe6e6;
-  border-left: 5px solid var(--danger-color);
+    background-color: #ffe6e6;
+    border-left: 5px solid var(--danger-color);
+}
+
+html[data-theme='dark'] .doz-bilgisi {
+    background-color: #5c4f2e;
+    color: var(--text-color);
+}
+
+html[data-theme='dark'] .doz-bilgisi.danger {
+    background-color: #4a282c;
 }
 
 .doz-bilgisi h6 {
-  font-size: 1rem;
-  margin-top: 0;
-  margin-bottom: 10px;
-  color: var(--dark-color);
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--dark-color);
 }
 
 .doz-bilgisi ul {
-  margin: 0;
-  padding-left: 20px;
+    margin: 0;
+    padding-left: 20px;
 }
 
 .doz-bilgisi li {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 /* FOOTER */
 footer {
-  width: 100%;
-  padding-top: 20px;
-  text-align: center;
-  border-top: 1px solid #ddd;
-  color: #555;
-  font-size: 0.85rem;
-  flex-shrink: 0;
-  margin-top: auto;
+    width: 100%;
+    padding-top: 20px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    color: #555;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    margin-top: auto;
+    transition: color 0.3s ease, border-top-color 0.3s ease;
 }
 
 footer .footer-link {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 footer a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-  color: var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 /* MOBİL UYUMLU TASARIM (768px ve altı) */
 @media (max-width: 768px) {
-  .container {
-    width: 90%;
-    padding: 20px;
-    margin: 15px auto;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-  }
-
-  select, input, button {
-    font-size: 0.9rem;
-    padding: 8px 10px;
-  }
-
-  .result, .not-metin, .not-maddeler, table,
-  .general-disclaimer, .interpretation, .disclaimer {
-    font-size: 0.85rem;
-  }
-
-  .supplement-section-info {
-    padding: 15px;
-    margin-top: 20px;
-  }
-
-  .supplement-section-info h5 {
-    font-size: 1rem;
-  }
-
-  .doz-bilgisi {
-    padding: 10px;
-  }
-
-  .doz-bilgisi h6 {
-    font-size: 0.95rem;
-  }
-
-  footer {
-    padding: 10px;
-    font-size: 0.8rem;
-    margin-top: 15px;
-  }
-
-  .checkbox-group {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .checkbox-group label {
-    width: 100%;
-  }
-
-  table {
-    font-size: 0.8rem;
-  }
-
-  th, td {
-    padding: 8px 10px;
-  }
+    .container {
+        width: 90%;
+        padding: 20px;
+        margin: 15px auto;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    select, input, button {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+    
+    .result, .not-metin, .not-maddeler, table, .general-disclaimer-new, .interpretation, .disclaimer {
+        font-size: 0.85rem;
+    }
+    
+    .supplement-section-info {
+        padding: 15px;
+        margin-top: 20px;
+    }
+    
+    .supplement-section-info h5 {
+        font-size: 1rem;
+    }
+    
+    .doz-bilgisi {
+        padding: 10px;
+    }
+    
+    .doz-bilgisi h6 {
+        font-size: 0.95rem;
+    }
+    
+    footer {
+        padding: 10px;
+        font-size: 0.8rem;
+        margin-top: 15px;
+    }
+    
+    .checkbox-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .checkbox-group label {
+        width: 100%;
+    }
+    
+    table {
+        font-size: 0.8rem;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+    
+    #initialDisclaimer.general-disclaimer-new {
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
 }
 
 /* KÜÇÜK MOBİL CİHAZLAR (480px ve altı) */
 @media (max-width: 480px) {
-  .container {
-    padding: 15px;
-    margin: 10px auto;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-  }
-
-  h2 {
-    font-size: 1.3rem;
-  }
-
-  button {
-    padding: 8px;
-    font-size: 0.9rem;
-  }
-
-  .result-card {
-    padding: 15px;
-  }
-
-  .result-value {
-    font-size: 1.4rem;
-  }
-
-  footer {
-    padding: 10px;
-    font-size: 0.8rem;
-    margin-top: 10px;
-  }
+    .container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    button {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    
+    .result-card {
+        padding: 15px;
+    }
+    
+    .result-value {
+        font-size: 1.4rem;
+    }
+    
+    footer {
+        padding: 10px;
+        font-size: 0.8rem;
+        margin-top: 10px;
+    }
 }
-/* ... Önceki CSS Kodları ... */
 
 /* Açılır Menü için Kaydırma Çubuğu Özelleştirmesi */
 /* Webkit tabanlı tarayıcılar (Chrome, Safari, Edge) için */
 .dropdown-content::-webkit-scrollbar {
-  width: 8px; /* Kaydırma çubuğunun genişliği */
+    width: 8px;
 }
 
 .dropdown-content::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Arka plan rengi */
-  border-radius: 10px;
+    background: var(--background-light);
+    border-radius: 10px;
 }
 
 .dropdown-content::-webkit-scrollbar-thumb {
-  background: #888; /* Kaydırma çubuğu rengi */
-  border-radius: 10px;
+    background: var(--border-color);
+    border-radius: 10px;
 }
 
 .dropdown-content::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Mouse üzerine gelince rengi */
+    background: #555;
+}
+
+html[data-theme='dark'] .dropdown-content::-webkit-scrollbar-track {
+    background: #333;
+}
+
+html[data-theme='dark'] .dropdown-content::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+/* MODERN TEMA DÜĞMESİ STİLLERİ */
+.modern-theme-toggle-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 25px 0;
+  padding: 0;
+}
+
+.modern-theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: var(--background-white);
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+}
+
+.modern-theme-toggle:hover {
+  background-color: var(--primary-color);
+  color: var(--background-white);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+html[data-theme='dark'] .modern-theme-toggle {
+  background-color: var(--background-light);
+  border-color: var(--text-color);
+  color: var(--text-color);
+}
+
+html[data-theme='dark'] .modern-theme-toggle:hover {
+  background-color: var(--text-color);
+  color: var(--background-white);
+  border-color: var(--background-white);
+}
+
+.modern-theme-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+/* Tema ikonları için SVG'ler */
+html[data-theme='light'] .modern-theme-toggle-icon {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234361ee' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'%3E%3C/path%3E%3C/svg%3E") no-repeat center center;
+  background-size: contain;
+}
+
+html[data-theme='light'] .modern-theme-toggle:hover .modern-theme-toggle-icon {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'%3E%3C/path%3E%3C/svg%3E") no-repeat center center;
+  background-size: contain;
+}
+
+html[data-theme='dark'] .modern-theme-toggle-icon {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e0e0e0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='5'%3E%3C/circle%3E%3Cline x1='12' y1='1' x2='12' y2='3'%3E%3C/line%3E%3Cline x1='12' y1='21' x2='12' y2='23'%3E%3C/line%3E%3Cline x1='4.22' y1='4.22' x2='5.64' y2='5.64'%3E%3C/line%3E%3Cline x1='18.36' y1='18.36' x2='19.78' y2='19.78'%3E%3C/line%3E%3Cline x1='1' y1='12' x2='3' y2='12'%3E%3C/line%3E%3Cline x1='21' y1='12' x2='23' y2='12'%3E%3C/line%3E%3Cline x1='4.22' y1='19.78' x2='5.64' y2='18.36'%3E%3C/line%3E%3Cline x1='18.36' y1='5.64' x2='19.78' y2='4.22'%3E%3C/line%3E%3C/svg%3E") no-repeat center center;
+  background-size: contain;
+}
+
+html[data-theme='dark'] .modern-theme-toggle:hover .modern-theme-toggle-icon {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23121212' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='5'%3E%3C/circle%3E%3Cline x1='12' y1='1' x2='12' y2='3'%3E%3C/line%3E%3Cline x1='12' y1='21' x2='12' y2='23'%3E%3C/line%3E%3Cline x1='4.22' y1='4.22' x2='5.64' y2='5.64'%3E%3C/line%3E%3Cline x1='18.36' y1='18.36' x2='19.78' y2='19.78'%3E%3C/line%3E%3Cline x1='1' y1='12' x2='3' y2='12'%3E%3C/line%3E%3Cline x1='21' y1='12' x2='23' y2='12'%3E%3C/line%3E%3Cline x1='4.22' y1='19.78' x2='5.64' y2='18.36'%3E%3C/line%3E%3Cline x1='18.36' y1='5.64' x2='19.78' y2='4.22'%3E%3C/line%3E%3C/svg%3E") no-repeat center center;
+  background-size: contain;
+}
+/* GÜNCEL FERAGATNAME STİLİ */
+#initialDisclaimer.general-disclaimer-new {
+    background: linear-gradient(135deg, #fff8e1, #fff9c4);
+    border-left: 5px solid #ffca28;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.disclaimer-title {
+    color: #ff6f00;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.disclaimer-text {
+    color: #4a4a4a;
+    line-height: 1.6;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+/* Koyu temada feragatname stili */
+html[data-theme='dark'] #initialDisclaimer.general-disclaimer-new {
+    background: linear-gradient(135deg, #3a3a2e, #4a4a3e);
+    border-left-color: #e7c000;
+}
+
+html[data-theme='dark'] .disclaimer-title {
+    color: #e7c000;
+}
+
+html[data-theme='dark'] .disclaimer-text {
+    color: #c9c9c9;
+}
+
+/* --- */
+/* GÜNCELLENMİŞ AKORDİYON STİLLERİ (KESİNLİKLE RENK DEĞİŞİMİ OLMAYAN) */
+/* --- */
+.accordion-container {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    background-color: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 18px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px; /* Yeni eklenen kod: Başlık ve ikon arasına boşluk koyar */
+}
+
+/* Üzerine gelince ve tıklayınca renk değişimi yok */
+.accordion-header:hover, .accordion-header:active, .accordion-item.active .accordion-header {
+    color: var(--text-color); /* Her zaman aynı metin rengi */
+    background-color: transparent; /* Her zaman şeffaf arka plan */
+}
+
+html[data-theme='dark'] .accordion-header {
+    color: var(--dark-color);
+}
+
+html[data-theme='dark'] .accordion-header:hover, html[data-theme='dark'] .accordion-header:active, html[data-theme='dark'] .accordion-item.active .accordion-header {
+    color: var(--dark-color);
+    background-color: transparent;
+}
+
+.accordion-header::after {
+    content: '+';
+    font-size: 24px;
+    color: var(--primary-color);
+    font-weight: 300;
+    transition: transform 0.3s ease, content 0.3s ease;
+}
+
+.accordion-item.active .accordion-header::after {
+    content: '-';
+}
+
+.accordion-content {
+    background-color: transparent;
+    color: var(--text-color);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    padding: 0 20px;
+    font-size: 0.95rem;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 1000px;
+    padding: 15px 20px 20px 20px;
+}
+
+html[data-theme='dark'] .accordion-content {
+    background-color: transparent;
+    color: var(--text-color);
+}
+/* ... (Mevcut CSS kodların) ... */
+
+/* YENİ İKON STİLLERİ */
+.dropdown-icon-img, .menu-icon-img {
+  width: 32px; /* İkonların varsayılan boyutu biraz büyütüldü */
+  height: 32px;
+  object-fit: contain;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-icon-img {
+  width: 36px; /* Dropdown butonundaki ikonun boyutu daha büyük */
+  height: 36px;
+}
+
+/* Hesaplama türü metinleri için font boyutu */
+.dropdown-text, .menu-text {
+    font-size: 1.1em; /* Metin fontu büyütüldü */
+    font-weight: 500;
+}
+
+#hesapListesi li:hover .menu-icon-img {
+  transform: scale(1.1);
+}
+
+/* Dropdown butonundaki ikon için ek stil */
+.dropdown-icon-wrapper .dropdown-icon-img {
+  margin-right: 12px; /* İkon ve metin arası boşluk artırıldı */
+}
+
+/* MOBİL UYUMLULUK */
+@media (max-width: 768px) {
+  .dropdown-icon-img, .menu-icon-img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .dropdown-icon-img {
+    width: 32px;
+    height: 32px;
+  }
+  .dropdown-text, .menu-text {
+      font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .dropdown-icon-img, .menu-icon-img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .dropdown-icon-img {
+    width: 28px;
+    height: 28px;
+  }
+  .dropdown-text, .menu-text {
+      font-size: 0.9em;
+  }
+}
+/* GÜNCEL FERAGATNAME STİLİ */
+#initialDisclaimer.general-disclaimer-new {
+    background: linear-gradient(135deg, #fff8e1, #fff9c4);
+    border-left: 5px solid #ffca28;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.disclaimer-title {
+    color: #ff6f00;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.disclaimer-text {
+    color: #4a4a4a;
+    line-height: 1.6;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+/* Koyu temada feragatname stili */
+html[data-theme='dark'] #initialDisclaimer.general-disclaimer-new {
+    background: linear-gradient(135deg, #3a3a2e, #4a4a3e);
+    border-left-color: #e7c000;
+}
+
+html[data-theme='dark'] .disclaimer-title {
+    color: #e7c000;
+}
+
+html[data-theme='dark'] .disclaimer-text {
+    color: #c9c9c9;
+}
+
+/* --- */
+/* GÜNCELLEMİŞ AKORDİYON STİLLERİ (KESİNLİKLE RENK DEĞİŞİMİ OLMAYAN) */
+/* --- */
+.accordion-container {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    background-color: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 18px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px; /* Yeni eklenen kod: Başlık ve ikon arasına boşluk koyar */
+}
+
+/* Üzerine gelince ve tıklayınca renk değişimi yok */
+.accordion-header:hover, .accordion-header:active, .accordion-item.active .accordion-header {
+    color: var(--text-color); /* Her zaman aynı metin rengi */
+    background-color: transparent; /* Her zaman şeffaf arka plan */
+}
+
+html[data-theme='dark'] .accordion-header {
+    color: var(--dark-color);
+}
+
+html[data-theme='dark'] .accordion-header:hover, html[data-theme='dark'] .accordion-header:active, html[data-theme='dark'] .accordion-item.active .accordion-header {
+    color: var(--dark-color);
+    background-color: transparent;
+}
+
+.accordion-header::after {
+    content: '+';
+    font-size: 24px;
+    color: var(--primary-color);
+    font-weight: 300;
+    transition: transform 0.3s ease, content 0.3s ease;
+}
+
+.accordion-item.active .accordion-header::after {
+    content: '-';
+}
+
+.accordion-content {
+    background-color: transparent;
+    color: var(--text-color);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    padding: 0 20px;
+    font-size: 0.95rem;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 1000px;
+    padding: 15px 20px 20px 20px;
+}
+
+html[data-theme='dark'] .accordion-content {
+    background-color: transparent;
+    color: var(--text-color);
 }
