@@ -1,36 +1,69 @@
 <div id="kafein" class="section">
   <h3>Kafein</h3>
+
   <input type="number" id="c_kilo" placeholder="Kilonuz (kg)" onkeyup="if(event.keyCode === 13) hesaplaKafein()" />
   <span id="c_kilo_warning" class="input-warning"></span>
   <button onclick="hesaplaKafein()">Hesapla</button>
   <div id="kafeinSonuc" class="result"></div>
 
   <div class="supplement-section-info">
-    <h5 class="info-header">Kafein Hakkında Bilgi:</h5>
-    <div class="not-metin">
-      <strong>Ne işe yarar:</strong> Merkezi sinir sistemini uyararak uyanıklığı artırır, yorgunluğu azaltır, odaklanmayı güçlendirir ve egzersiz performansını (özellikle dayanıklılık ve güç) artırır.
-      <br><strong>Nasıl kullanılır:</strong> Genellikle antrenmandan 30-60 dakika önce alınır. Kafein toleransı kişiden kişiye değiştiği için düşük dozla başlayıp kademeli artırmak önemlidir.
-      <br><strong>Etkisi ne zaman görülür:</strong> Alımdan sonra 30-60 dakika içinde etkileri başlar ve 3-6 saat sürebilir.
-    </div>
-    
-    <h5 class="info-header">Sıkça Sorulan Sorular:</h5>
-<div class="not-metin">
-  <!-- YENİ EKLENEN SORU (EN ÜSTE) -->
-  <strong>Kafein toleransımı nasıl sıfırlayabilirim?</strong><br>
-  14 gün boyunca kafein alımını keserek adenozin reseptörlerinizi resetleyebilirsiniz. Yeşil çay (L-theanine içerir) geçiş döneminde yardımcı olabilir.
 
-  <!-- MEVCUT SORULAR (TAMAMEN AYNI) -->
-  <br><br><strong>Bağımlılık yapar mı?</strong><br>
-  Evet, düzenli ve yüksek dozda alım fiziksel bağımlılığa yol açabilir. Bırakıldığında baş ağrısı ve yorgunluk gibi belirtiler görülebilir.
-  
-  <br><br><strong>Kafein tansiyonu yükseltir mi?</strong><br>
-  Evet, tansiyonu kısa süreliğine yükseltebilir. Kalp veya tansiyon hastaları kullanmadan önce mutlaka doktora danışmalıdır.
-  
-  <br><br><strong>Kafein toleransı nedir?</strong><br>
-  Düzenli kullanımla vücudun kafeine alışması ve aynı etki için daha yüksek dozlara ihtiyaç duymasıdır.
-  
-  <br><br><strong>Dehidrasyona neden olur mu?</strong><br>
-  Hayır, kafeinin hafif idrar söktürücü etkisi olsa da vücut buna uyum sağlar ve günlük su tüketiminiz yeterliyse dehidrasyona sebep olmaz.
+    <div class="info-section">
+      <h5 class="info-header">Kafein Hakkında Bilgi:</h5>
+      <div class="not-metin">
+        <strong>Ne işe yarar:</strong> Merkezi sinir sistemini uyararak uyanıklığı artırır, yorgunluğu azaltır, odaklanmayı güçlendirir ve egzersiz performansını (özellikle dayanıklılık ve güç) artırır.
+        <br><strong>Nasıl kullanılır:</strong> Önerilen doz, antrenmandan 30-60 dakika önce alınır. Kafein toleransı kişiden kişiye değiştiği için düşük dozla başlayıp kademeli artırmak önemlidir.
+        <br><strong>Etkisi ne zaman görülür:</strong> Alımdan sonra 30-60 dakika içinde etkileri başlar.
+      </div>
+    </div>
+
+    <div class="faq-section">
+  <h5 class="info-header">Sıkça Sorulan Sorular:</h5>
+  <div class="accordion-container">
+
+    <div class="accordion-item">
+      <button class="accordion-header">Kafein sağlığa zararlı mı?</button>
+      <div class="accordion-content">
+        <div class="not-metin">
+          <ul class="not-maddeler">
+            <li>Yüksek dozda tansiyonu yükseltebilir, kalp ritmini bozabilir.</li>
+            <li>Düzenli ve yüksek dozda alım bağımlılık yapabilir. Bırakıldığında baş ağrısı, yorgunluk gibi belirtiler görülebilir.</li>
+            <li>Hafif idrar söktürücü etkisi olsa da vücut buna uyum sağlar; yeterli su tüketiliyorsa dehidrasyon riski düşüktür.</li>
+            <li>1 gram üzeri dozlar ciddi yan etkilere neden olabilir; 5 gram ve üzeri hayati tehlike oluşturur.</li>
+            <li>Kalp-damar hastalığı, yüksek tansiyon, anksiyete bozukluğu veya uyku problemi olan bireylerde dikkatli kullanılmalıdır.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">Kafein toleransı nedir, nasıl sıfırlanır?</button>
+      <div class="accordion-content">
+        <div class="not-metin">
+          <ul class="not-maddeler">
+            <li>Tolerans, düzenli kullanımla vücudun kafeine alışması ve aynı etki için daha yüksek dozlara ihtiyaç duymasıdır.</li>
+            <li>14 gün boyunca kafein alımını keserek adenozin reseptörleri sıfırlanabilir.</li>
+            <li>Geçiş döneminde yeşil çay (L-theanine içerdiği için) yardımcı olabilir.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">Vücudumda ne kadar süre etki eder?</button>
+      <div class="accordion-content">
+        <div class="not-metin">
+          <ul class="not-maddeler">
+            <li>Kafein alımından sonra etkisi genellikle 30–60 dakika içinde başlar.</li>
+            <li>Uyanıklık, odaklanma ve performans etkisi 3–6 saat sürebilir.</li>
+            <li>Yarılanma ömrü ortalama 4–6 saattir; yani alınan dozun yarısı bu sürede vücuttan atılır.</li>
+            <li>Genetik, karaciğer enzim aktivitesi ve kullanılan ilaçlara göre bu süre kişiden kişiye değişebilir.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
     <div class="doz-bilgisi">
@@ -125,6 +158,7 @@
         Kalp-damar hastalığı, yüksek tansiyon, anksiyete bozukluğu veya uyku problemi olan bireylerde kafein kullanımı ciddi sağlık riski oluşturabilir. Yukarıda belirtilen <strong>1 gram ve üzeri dozlar</strong> tehlikeli kabul edilir ve acil tıbbi müdahale gerektirebilir.
       </div>
     </div>
+
   </div>
 
   <div class="disclaimer">

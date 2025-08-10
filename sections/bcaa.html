@@ -1,0 +1,118 @@
+<div id="bcaa" class="section">
+  <h3>BCAA</h3>
+  <input type="number" id="bcaa_kilo" placeholder="Kilonuz (kg)" onkeyup="if(event.keyCode === 13) hesaplaBcaa()" />
+  <span id="bcaa_kilo_warning" class="input-warning"></span>
+  <button onclick="hesaplaBcaa()">Hesapla</button>
+  <div id="bcaaSonuc" class="result"></div>
+
+  <div class="supplement-section-info">
+
+    <!-- Bilgilendirme -->
+    <div class="info-section">
+      <h5 class="info-header">BCAA Hakkında Bilgi:</h5>
+      <div class="not-metin">
+        <strong>Ne işe yarar:</strong> Protein eksikliği durumunda kas yıkımını azaltmaya ve toparlanmayı desteklemeye yardımcı olabilir.<br>
+        <strong>Nasıl kullanılır:</strong> Önerilen doz antrenman öncesi/sonrası 5-10 gram arasıdır.<br>
+        <strong>Etkisi ne zaman görülür:</strong> Akut toparlanma ve kas ağrısı azalmasında hızlı etki gösterebilir.
+      </div>
+    </div>
+
+    <!-- Sıkça Sorulan Sorular -->
+    <div class="faq-section">
+      <h5 class="faq-header">Sıkça Sorulan Sorular:</h5>
+      <div class="accordion-container">
+
+        <!-- 1. Sağlığa Zararlı mı -->
+        <div class="accordion-item">
+          <button class="accordion-header">BCAA sağlığa zararlı mı?</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Önerilen dozlarda (5–10 g/gün) sağlıklı bireyler için genellikle güvenlidir.</li>
+              <li>Uzun süreli yüksek dozlar (>15 g/gün) insülin direnci riskini artırabilir.</li>
+              <li>Karaciğer ve böbrek sorunları olan bireylerde ek yük oluşturabileceği için tıbbi kontrol gerekebilir.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. Gerekli mi, Kullanmalı mıyım -->
+        <div class="accordion-item">
+          <button class="accordion-header">BCAA supplementi gerçekten gerekli mi, kullanmalı mıyım?</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Yeterli miktarda protein (≥1.6 g/kg/gün) alıyorsan BCAA takviyesine gerek yoktur.</li>
+              <li>Whey protein gibi tam kaynaklar hem BCAA hem diğer amino asitleri içerdiği için çok daha etkilidir.</li>
+              <li>BCAA, kas yapımını değil, sadece yıkımı azaltabilir — bu yüzden etkisi sınırlıdır.</li>
+              <li>Açlıkta antrenman gibi bazı spesifik durumlarda destekleyici olabilir ama bu bile tam proteinle daha iyi yönetilebilir.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. 4:1:1 - 2:1:1 Farkı -->
+        <div class="accordion-item">
+          <button class="accordion-header">4:1:1 ve 2:1:1 oranları arasındaki fark nedir?</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Her iki oran da lösin:izolösin:valin oranlarını temsil eder.</li>
+              <li>4:1:1 oranı lösin miktarını artırarak mTOR(kas büyüme sinyali) aktivasyonunu hedefler.</li>
+              <li>2:1:1 oranı ise doğal protein kaynaklarına daha yakındır ve daha dengelidir.</li>
+              <li>Araştırmalar lösin dozunun bir noktadan sonra ek etki yaratmadığını, 2:1:1’in yeterli olduğunu gösteriyor.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 4. BCAA vs EAA -->
+        <div class="accordion-item">
+          <button class="accordion-header">BCAA ile EAA arasındaki fark nedir?</button>
+          <div class="accordion-content">
+            <ul>
+              <li>BCAA sadece 3 amino asit içerir: lösin, izolösin, valin.</li>
+              <li>EAA ise vücudun sentezleyemediği 9 temel amino asidi içerir.</li>
+              <li>EAA direkt olarak kas protein sentezini desteklerken, BCAA sadece kas yıkımını azaltır.</li>
+              <li>EAA, hem anabolik etki hem toparlanma açısından BCAA’dan daha üstün ve kapsamlıdır.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Doz Bilgisi -->
+    <div class="doz-bilgisi">
+      <h6>Doz Aşımı (Hafifçe Yüksek Alım):</h6>
+      <ul class="not-maddeler">
+        <li><span class="turuncu">Olası Olumsuz Etkileri:</span>
+          <ul>
+            <li>Sindirim sorunları (şişkinlik, gaz) görülebilir.</li>
+          </ul>
+        </li>
+        <li><span class="yesil">Olası Olumlu Etkileri:</span>
+          <ul>
+            <li>Yoğun antrenman sonrası ek toparlanma desteği.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="doz-bilgisi danger">
+      <h6>Aşırı Doz Aşımı (Çok Yüksek Alım):</h6>
+      <ul class="not-maddeler">
+        <li><strong>Günlük 30 gram üzeri kullanım:</strong>
+          <ul>
+            <li><span class="kirmizi">Olumsuz Etkileri:</span>
+              <ul>
+                <li>Böbrekler ve karaciğer üzerinde artan potansiyel yük.</li>
+                <li>Diğer amino asitlerin emilimini engelleyerek dengesizliğe yol açabilir.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Uyarı -->
+  <div class="disclaimer">
+    Uyarı: Bu hesaplayıcıdaki bilgiler genel rehber niteliğindedir ve tıbbi tavsiye yerine geçmez. Sağlık durumunuz veya supplement kullanımı hakkında karar vermeden önce daima bir sağlık profesyoneline danışın.
+  </div>
+</div>

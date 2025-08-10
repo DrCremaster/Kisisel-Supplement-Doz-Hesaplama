@@ -1,0 +1,122 @@
+<div id="glutamin" class="section">
+  <h3>Glutamin</h3>
+
+  <input
+    type="number"
+    id="glutamin_kilo"
+    placeholder="Kilonuz (kg)"
+    onkeyup="if(event.keyCode === 13) hesaplaGlutamin()"
+  />
+  <span id="glutamin_kilo_warning" class="input-warning"></span>
+  <button onclick="hesaplaGlutamin()">Hesapla</button>
+  <div id="glutaminSonuc" class="result"></div>
+
+  <div class="supplement-section-info">
+
+    <!-- Bilgilendirme (Sadeleştirilmiş) -->
+    <div class="info-section">
+      <h5 class="info-header">Glutamin Hakkında Bilgi:</h5>
+      <div class="not-metin">
+        <strong>Ne işe yarar:</strong> Bağırsak sağlığını destekler, yorgunluk hissine etkisi minimal.<br>
+        <strong>Nasıl kullanılır:</strong> Spor sonrası veya yatmadan önce 5-10 gram alınır.<br>
+        <strong>Etkisi ne zaman görülür:</strong> Bağırsak semptomlarında birkaç gün, spor performansında ise çok sınırlı.
+      </div>
+    </div>
+
+    <!-- SSS -->
+    <div class="faq-section">
+  <h5 class="faq-header">Sıkça Sorulan Sorular:</h5>
+  <div class="accordion-container">
+
+    <!-- 1. Glutamin sağlığa zararlı mı? -->
+    <div class="accordion-item">
+      <button class="accordion-header">Glutamin sağlığa zararlı mı?</button>
+      <div class="accordion-content">
+        <div class="not-metin">
+          <ul class="not-maddeler">
+            <li>Günlük 20 g altı kullanım genellikle güvenlidir.</li>
+            <li>20 g ve üzeri uzun süre alınırsa böbrek yükü ve sindirim sorunları riski artar.</li>
+            <li>Böbrek veya karaciğer problemi olanlar doktor onayı almalı.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Glutamin gerçekten gerekli mi, kimler kullanmalı? -->
+    <div class="accordion-item">
+      <button class="accordion-header">Glutamin gerçekten gerekli mi, kimler kullanmalı?</button>
+      <div class="accordion-content">
+        <div class="not-metin">
+          <ul class="not-maddeler">
+            <li>Yeterli protein alıyorsan ekstra glutamine ihtiyaç yok.</li>
+            <li>Sağlıklı bireylerde kas gelişimine katkısı kanıtlanmamış.</li>
+            <li>Whey proteini ve diğer tam protein kaynakları zaten yeterli glutamin içerir.</li>
+            <li>Ancak şu gruplarda sınırlı fayda sağlayabilir:
+              <ul>
+                <li>Kronik bağırsak sorunu yaşayanlar (IBS, sızdıran bağırsak).</li>
+                <li>Aşırı yoğun antrenman yapan elit sporcular (günde 2+ saat).</li>
+                <li>Vegan veya yetersiz protein tüketen bireyler.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Bağırsak sağlığı için faydalı mı? -->
+    <div class="accordion-item">
+      <button class="accordion-header">Bağırsak sağlığı için faydalı mı?</button>
+      <div class="accordion-content">
+        <div class="not-metin">
+          <ul class="not-maddeler">
+            <li>IBS veya sızdıran bağırsak sendromu gibi durumlarda destek olabilir.</li>
+            <li>Genel popülasyonda etkisi sınırlı ve kanıt düzeyi düşüktür.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <!-- Doz Bilgisi -->
+    <div class="doz-bilgisi">
+      <h6>Doz Aşımı (Hafifçe Yüksek Alım):</h6>
+      <ul class="not-maddeler">
+        <li><span class="turuncu">Olası Olumsuz Etkileri:</span>
+          <ul>
+            <li>Hafif mide rahatsızlığı ve gaz.</li>
+          </ul>
+        </li>
+        <li><span class="yesil">Olası Olumlu Etkileri:</span>
+          <ul>
+            <li>Yoğun antrenman sonrası bağışıklık desteği.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="doz-bilgisi danger">
+      <h6>Aşırı Doz Aşımı (Çok Yüksek Alım):</h6>
+      <ul class="not-maddeler">
+        <li><strong>Günlük 40 gram üzeri kullanım:</strong>
+          <ul>
+            <li><span class="kirmizi">Olumsuz Etkileri:</span>
+              <ul>
+                <li>Böbreklerde ekstra yük.</li>
+                <li>Şiddetli sindirim problemleri.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Uyarı -->
+  <div class="disclaimer">
+    Uyarı: Bu hesaplayıcıdaki bilgiler genel rehber niteliğindedir ve tıbbi tavsiye yerine geçmez. Sağlık durumunuz veya
+    supplement kullanımı hakkında karar vermeden önce daima bir sağlık profesyoneline danışın.
+  </div>
+</div>

@@ -1,60 +1,129 @@
 <div id="karnitin" class="section">
-    <h3>L-Karnitin</h3>
-    <input type="number" id="l_kilo" placeholder="Kilonuz (kg)" onkeyup="if(event.keyCode === 13) hesaplaKarnitin()" />
-    <span id="l_kilo_warning" class="input-warning"></span>
-    <button onclick="hesaplaKarnitin()">Hesapla</button>
-    <div id="karnitinSonuc" class="result"></div>
-    <div class="supplement-section-info">
+  <h3>L-Karnitin</h3>
+  <input type="number" id="l_kilo" placeholder="Kilonuz (kg)" onkeyup="if(event.keyCode === 13) hesaplaKarnitin()" />
+  <span id="l_kilo_warning" class="input-warning"></span>
+  <button onclick="hesaplaKarnitin()">Hesapla</button>
+  <div id="karnitinSonuc" class="result"></div>
+
+  <div class="supplement-section-info">
+
+    <div class="info-section">
       <h5 class="info-header">L-Karnitin Hakkında Bilgi:</h5>
       <div class="not-metin">
-        <strong>Ne işe yarar:</strong> Yağ asitlerinin mitokondriye taşınmasına yardımcı olarak enerji üretimine katkıda bulunur. Genellikle yağ yakımı ve performans artışı ile ilişkilendirilir, ancak faydaları tartışmalıdır ve daha çok eksikliği olan bireylerde veya belirli koşullarda etkilidir.
+        <strong>Ne işe yarar:</strong> Yağ asitlerini mitokondriye taşır. Eksikliği olan bireylerde enerji üretimini ve egzersiz kapasitesini destekleyebilir.
         <br><strong>Nasıl kullanılır:</strong> Genellikle karbonhidrat içeren bir öğünle birlikte (emilimi artırmak için) veya antrenman öncesi alınır. Düzenli ve uzun süreli kullanım önemlidir.
         <br><strong>Etkisi ne zaman görülür:</strong> Etkileri hemen değil, uzun süreli ve düzenli kullanımda (haftalar/aylar) ortaya çıkar. Çoğu sağlıklı bireyde belirgin performans veya yağ yakımı etkisi görülmeyebilir.
       </div>
-      <h5 class="info-header">Sıkça Sorulan Sorular:</h5>
-<div class="not-metin">
-    <strong>L-Karnitin gerçekten yağ yakımını sağlar mı?</strong><br>
-    L-Karnitin, yağ asitlerinin mitokondrilere taşınmasında rol oynasa da, bilimsel çalışmalar, sağlıklı bireylerde ek takviyenin bu süreci hızlandırmadığı ve doğrudan yağ yakıcı bir etkisi olmadığını göstermektedir. Takviye, ancak vücudunda eksiklik olanlarda veya belirli durumlarda (yaşlılar, vejetaryenler gibi) faydalı olabilir.
-    <br><br>
-    <strong>Herkes L-Karnitin kullanmalı mı?</strong><br>
-    Hayır. Sağlıklı ve yeterli beslenen çoğu kişi için kullanımı zorunlu değildir. Takviye, daha çok yaşlı bireyler, uzun süreli kardiyo yapan sporcular veya L-Karnitin eksikliği olan kişiler için önerilebilir. Kullanımdan önce bir sağlık profesyoneline danışılması en doğrusudur.
-</div>
+    </div>
 
-      <div class="doz-bilgisi">
-        <h6>Doz Aşımı (Hafifçe Yüksek Alım):</h6>
-        <ul class="not-maddeler">
-            <li><span class="turuncu">Olası Olumsuz Etkileri:</span>
+    <div class="faq-section">
+      <h5 class="info-header">Sıkça Sorulan Sorular:</h5>
+      <div class="accordion-container">
+
+        <div class="accordion-item">
+          <button class="accordion-header">L-Karnitin sağlığa zararlı mı?</button>
+          <div class="accordion-content">
+            <div class="not-metin">
               <ul>
-                <li>Mide bulantısı, karın ağrısı, ishal, kusma (daha belirgin olabilir).</li>
-                <li>Vücut kokusunda artış ("balık kokusu" sendromu) riski.</li>
+                <li>Genel olarak güvenli kabul edilir, ancak yüksek dozlarda mide rahatsızlığı, ishal ve vücut kokusunda artış gibi yan etkiler görülebilir.</li>
+                <li>5 gram üzeri uzun süreli kullanımda olumsuz etkiler belirginleşebilir.</li>
+                <li>Herhangi bir takviyede olduğu gibi, sağlık profesyoneli onayıyla kullanılması önerilir.</li>
               </ul>
-            </li>
-            <li><span class="yesil">Olası Olumlu Etkileri:</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Yeni Bölüm 1 -->
+        <div class="accordion-item">
+          <button class="accordion-header">L-Karnitin gerçekten yağ yakar mı?</button>
+          <div class="accordion-content">
+            <div class="not-metin">
               <ul>
-                <li>Kas karnitin depolarının doygunluğa daha hızlı ulaşması potansiyeli.</li>
-                <li>Yoğun antrenman sonrası toparlanmada hafif bir iyileşme hissi (tartışmalı ve kişiye bağlı).</li>
+                <li>L-Karnitin, yağ asitlerini mitokondrilere taşıyan bir moleküldür.</li>
+                <li>Sağlıklı bireylerde takviye alımı bu taşıma hızını artırmaz.</li>
+                <li>Bilimsel çalışmalar, doğrudan yağ yakımını artırmadığını göstermektedir.</li>
+                <li>Yağ yakımı için temel faktörler: kalori açığı, antrenman yoğunluğu ve metabolik adaptasyonlardır.</li>
               </ul>
-            </li>
-        </ul>
-      </div>
-      <div class="doz-bilgisi danger">
-        <h6>Aşırı Doz Aşımı (Çok Yüksek Alım):</h6>
-        <ul class="not-maddeler">
-          <li><strong>Günlük 5 gram üzeri ve uzun süreli kullanım:</strong>
-            <ul>
-              <li><span class="kirmizi">Olumsuz Etkileri:</span>
-				  <ul>
-					  <li>Şiddetli mide rahatsızlığı, bulantı, kusma, ishal.</li>
-					  <li>Vücut kokusunda belirgin artış ("balık kokusu" sendromu).</li>
-					  <li>Nadir durumlarda kas zayıflığı.</li>
-				  </ul>
-			  </li>
-            </ul>
-          </li>
-        </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Yeni Bölüm 2 -->
+        <div class="accordion-item">
+          <button class="accordion-header">L-Karnitin kullanmak gerekli mi?</button>
+          <div class="accordion-content">
+            <div class="not-metin">
+              <ul>
+                <li>Sağlıklı ve aktif bireylerde, özellikle yeterli protein ve et tüketimi varsa, L-Karnitin takviyesi genellikle gereksizdir.</li>
+                <li>Takviye, şu gruplarda sınırlı fayda sağlayabilir:
+                  <ul>
+                    <li>Yaşlı bireyler (emilim ve sentez kapasitesi düşebilir)</li>
+                    <li>Vejetaryenler (diyetle yeterli karnitin alınmaz)</li>
+                    <li>Uzun süreli kardiyo yapan sporcular (dayanıklılık için destekleyici olabilir)</li>
+                    <li>Karnitin eksikliği tanısı almış bireyler (nadir metabolik bozukluklar)</li>
+                  </ul>
+                </li>
+                <li>Kullanım kararı kişiye özel olmalı, sağlık profesyoneliyle değerlendirilmelidir.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">L-Karnitinin etkisi ne kadar sürer ve ne zaman biter?</button>
+          <div class="accordion-content">
+            <div class="not-metin">
+              <ul>
+                <li>L-karnitinin etkisi, ihtiyacı olan bireylerde hemen başlamaz.</li>
+                <li>Kaslardaki karnitin seviyelerinin %10-20 artması için genellikle 3-4 hafta boyunca günlük 2-3 gram düzenli kullanım gerekir.</li>
+                <li>Takviye bırakıldığında ise, bu seviyeler yaklaşık 4-6 hafta içinde yavaşça normal haline döner.</li>
+                <li>Bu etkiler, özellikle vejetaryenler, veganlar veya karnitin eksikliği olan bireylerde daha belirgin olabilir. Sağlıklı ve dengeli beslenen genç bireylerde ise etki sınırlıdır.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div class="disclaimer">
-      Uyarı: Bu hesaplayıcıdaki bilgiler genel rehber niteliğindedir ve tıbbi tavsiye yerine geçmez. Sağlık durumunuz veya supplement kullanımı hakkında karar vermeden önce daima bir sağlık profesyoneline danışın.
+
+    <div class="doz-bilgisi">
+      <h6>Doz Aşımı (Hafifçe Yüksek Alım):</h6>
+      <ul class="not-maddeler">
+        <li><span class="turuncu">Olası Olumsuz Etkileri:</span>
+          <ul>
+            <li>Mide bulantısı, karın ağrısı, ishal, kusma (daha belirgin olabilir).</li>
+            <li>Vücut kokusunda artış ("balık kokusu" sendromu) riski.</li>
+          </ul>
+        </li>
+        <li><span class="yesil">Olası Olumlu Etkileri:</span>
+          <ul>
+            <li>Kas karnitin depolarının doygunluğa daha hızlı ulaşması potansiyeli.</li>
+            <li>Yoğun antrenman sonrası toparlanmada hafif bir iyileşme hissi (tartışmalı ve kişiye bağlı).</li>
+          </ul>
+        </li>
+      </ul>
     </div>
+
+    <div class="doz-bilgisi danger">
+      <h6>Aşırı Doz Aşımı (Çok Yüksek Alım):</h6>
+      <ul class="not-maddeler">
+        <li><strong>Günlük 5 gram üzeri ve uzun süreli kullanım:</strong>
+          <ul>
+            <li><span class="kirmizi">Olumsuz Etkileri:</span>
+              <ul>
+                <li>Şiddetli mide rahatsızlığı, bulantı, kusma, ishal.</li>
+                <li>Vücut kokusunda belirgin artış ("balık kokusu" sendromu).</li>
+                <li>Nadir durumlarda kas zayıflığı.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
   </div>
+
+  <div class="disclaimer">
+    Uyarı: Bu hesaplayıcıdaki bilgiler genel rehber niteliğindedir ve tıbbi tavsiye yerine geçmez. Sağlık durumunuz veya supplement kullanımı hakkında karar vermeden önce daima bir sağlık profesyoneline danışın.
+  </div>
+</div>

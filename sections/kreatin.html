@@ -1,76 +1,143 @@
 <div id="kreatin" class="section">
-    <h3>Kreatin Monohidrat</h3>
-    <input type="number" id="k_kilo" placeholder="Kilonuz (kg)" onkeyup="if(event.keyCode === 13) hesaplaKreatin()" />
-    <span id="k_kilo_warning" class="input-warning"></span>
-    <button onclick="hesaplaKreatin()">Hesapla</button>
-    <div id="kreatinSonuc" class="result"></div>
-    <div class="supplement-section-info">
+  <h3>Kreatin Monohidrat</h3>
+  <input type="number" id="k_kilo" placeholder="Kilonuz (kg)" onkeyup="if(event.keyCode === 13) hesaplaKreatin()" />
+  <span id="k_kilo_warning" class="input-warning"></span>
+  <button onclick="hesaplaKreatin()">Hesapla</button>
+  <div id="kreatinSonuc" class="result"></div>
 
+  <div class="supplement-section-info">
+
+    <!-- Bilgilendirme -->
+    <div class="info-section">
       <h5 class="info-header">Kreatin Hakkında Bilgi:</h5>
       <div class="not-metin">
         <strong>Ne işe yarar:</strong> Kaslarda enerji depolayarak kısa süreli, yüksek yoğunluklu egzersizlerde performansı iyileştirir. Güç artışı ve kas kütlesi kazanımına yardımcı olur.
         <br><strong>Nasıl kullanılır:</strong> Günlük idame dozu günün herhangi bir saati alınabilir. Yükleme evresi isteğe bağlıdır.
-        <br><strong>Etkisi ne zaman görülür:</strong> Yükleme evresiyle 5-7 gün içinde, yükleme yapılmadan 3-4 haftada kas depoları dolunca etkileri görülmeye başlar.
+        <br><strong>Etkisi ne zaman görülür:</strong> Yükleme evresiyle 5–7 gün içinde, yükleme yapılmadan 3–4 haftada kas depoları dolunca etkileri görülmeye başlar.
       </div>
+    </div>
 
+    <!-- SSS -->
+    <div class="faq-section">
       <h5 class="info-header">Sıkça Sorulan Sorular:</h5>
-      <div class="not-metin">
-  <strong>Hangi kreatin formu en etkilidir?</strong><br>
-  Kreatin monohidrat, 30 yılı aşkın araştırmalarla kanıtlanmış en etkili ve güvenli formdur. Piyasadaki diğer formlar (etil ester, HCl, buffered vb.) monohidrat kadar etkili değildir ve genellikle daha pahalıdır. Saf kreatin monohidrat tercih edilmelidir.
-  
-  <br><br><strong>Böbrek ve karaciğeri yorar mı?</strong><br>
-  Sağlıklı bireylerde, önerilen dozda (günlük 3-5 gram) kullanıldığında kreatinin böbrek veya karaciğere zarar verdiği bilimsel olarak kanıtlanmamıştır. Mevcut böbrek hastalığı olanlar mutlaka doktora danışmalıdır.
-  <br><br>
-  <strong>Saç döker mi?</strong><br>
-  Hayır, kreatin kullanımıyla saç dökülmesi arasında doğrudan bir bilimsel ilişki bulunmamaktadır. Bu, yaygın bir efsanedir.
+      <div class="accordion-container">
 
-  <br><br>
-  <strong>Kreatin kullanırken daha fazla su içmeli miyim?</strong><br>
-  Kreatin dehidrasyona neden olmaz ve ekstra su tüketimi zorunlu değildir. Ancak, kaslarda su tutulumunu artırdığı için hidrasyonu desteklemek adına su alımını artırmak her zaman faydalıdır.
-</div>
-
-      
-      <div class="doz-bilgisi">
-        <h6>Doz Aşımı (Hafifçe Yüksek Alım):</h6>
-        <ul class="not-maddeler">
-          <li><span class="turuncu">Olası Olumsuz Etkileri:</span>
-            <ul>
-              <li>Nadir durumlarda mide rahatsızlığı, şişkinlik veya ishal.</li>
-            </ul>
-          </li>
-          <li><span class="yesil">Olası Olumlu Etkileri:</span>
-            <ul>
-              <li>Kaslarda kreatin doygunluğuna daha hızlı ulaşım (yükleme evresi yapılıyorsa).</li>
-              <li>Bazı bireylerde potansiyel olarak daha hızlı güç artışı gözlemlenebilir.</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="doz-bilgisi danger">
-        <h6>Aşırı Doz Aşımı (Çok Yüksek ve Uzun Süreli Alım):</h6>
-        <ul class="not-maddeler">
-          <li><strong>Günlük 30 gram üzeri ve uzun süreli kullanım:</strong>
-            <ul>
-              <li><span class="kirmizi">Olumsuz Etkileri:</span>
-                <ul>
-                   <li>Böbrekler üzerinde potansiyel ek yük (özellikle mevcut böbrek hastalığı olanlarda).</li>
-                   <li>Mide-bağırsak rahatsızlıkları (şiddetli kramp, ishal, bulantı).</li>
-                   <li>Dehidrasyon riski.</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-       <div class="doz-bilgisi danger">
-        <h6>DİKKAT:</h6>
-        <div class="not-metin kirmizi">
-          <strong>Tıbbi uyarı:</strong><br>
-           Mevcut böbrek hastalığı olanlar kullanmadan önce mutlaka doktora danışmalıdır.
+        <!-- 1. Sağlığa zararlı mı? -->
+        <div class="accordion-item">
+          <button class="accordion-header">Kreatin sağlığa zararlı mı?</button>
+          <div class="accordion-content">
+            <div class="not-metin">
+              <ul>
+                <li>Önerilen dozlarda (3–5 g/gün) kullanıldığında sağlıklı bireylerde güvenlidir.</li>
+                <li>Böbrek veya karaciğer üzerinde zararlı etkisi olduğuna dair bilimsel kanıt yoktur.</li>
+                <li>Mevcut böbrek hastalığı olanlar mutlaka doktora danışmalıdır.</li>
+              </ul>
+            </div>
+          </div>
         </div>
+
+        <!-- 2. Etkisi ne zaman görülür? -->
+        <div class="accordion-item">
+          <button class="accordion-header">Etkisi ne zaman görülür?</button>
+          <div class="accordion-content">
+            <div class="not-metin">
+              <ul>
+                <li>Yükleme yapılırsa 5–7 gün içinde kas kreatin depoları dolmaya başlar.</li>
+                <li>Yükleme yapılmazsa bu süreç 3–4 haftayı bulabilir.</li>
+                <li>Kaslardaki kreatin doygunluğu sağlandığında güç artışı ve performans etkisi hissedilir.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Hangi form en etkilidir? -->
+        <div class="accordion-item">
+          <button class="accordion-header">Hangi kreatin formu en etkilidir?</button>
+          <div class="accordion-content">
+            <div class="not-metin">
+              <ul>
+                <li>Kreatin monohidrat, 30 yılı aşkın araştırmalarla kanıtlanmış en etkili ve güvenli formdur.</li>
+                <li>Piyasadaki diğer formlar (etil ester, HCl, buffered vb.) monohidrat kadar etkili değildir ve genellikle daha pahalıdır.</li>
+                <li>Saf kreatin monohidrat tercih edilmelidir.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Saç döker mi? -->
+        <div class="accordion-item">
+          <button class="accordion-header">Saç döker mi?</button>
+          <div class="accordion-content">
+            <div class="not-metin">
+              <ul>
+                <li>Hayır, kreatin kullanımıyla saç dökülmesi arasında doğrudan bir bilimsel ilişki bulunmamaktadır. Bu, yaygın bir efsanedir.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Su içmek gerekir mi? -->
+        <div class="accordion-item">
+          <button class="accordion-header">Kreatin kullanırken daha fazla su içmeli miyim?</button>
+          <div class="accordion-content">
+            <div class="not-metin">
+              <ul>
+                <li>Kreatin dehidrasyona neden olmaz ve ekstra su tüketimi zorunlu değildir.</li>
+                <li>Ancak, kaslarda su tutulumunu artırdığı için hidrasyonu desteklemek adına su alımını artırmak her zaman faydalıdır.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div class="disclaimer">
-      Uyarı: Bu hesaplayıcıdaki bilgiler genel rehber niteliğindedir ve tıbbi tavsiye yerine geçmez. Sağlık durumunuz veya supplement kullanımı hakkında karar vermeden önce daima bir sağlık profesyoneline danışın.
+
+    <!-- Doz Bilgisi -->
+    <div class="doz-bilgisi">
+      <h6>Doz Aşımı (Hafifçe Yüksek Alım):</h6>
+      <ul class="not-maddeler">
+        <li><span class="turuncu">Olası Olumsuz Etkileri:</span>
+          <ul>
+            <li>Nadir durumlarda mide rahatsızlığı, şişkinlik veya ishal.</li>
+          </ul>
+        </li>
+        <li><span class="yesil">Olası Olumlu Etkileri:</span>
+          <ul>
+            <li>Kaslarda kreatin doygunluğuna daha hızlı ulaşım (yükleme evresi yapılıyorsa).</li>
+            <li>Bazı bireylerde potansiyel olarak daha hızlı güç artışı gözlemlenebilir.</li>
+          </ul>
+        </li>
+      </ul>
     </div>
+
+    <div class="doz-bilgisi danger">
+      <h6>Aşırı Doz Aşımı (Çok Yüksek ve Uzun Süreli Alım):</h6>
+      <ul class="not-maddeler">
+        <li><strong>Günlük 30 gram üzeri ve uzun süreli kullanım:</strong>
+          <ul>
+            <li><span class="kirmizi">Olumsuz Etkileri:</span>
+              <ul>
+                <li>Böbrekler üzerinde potansiyel ek yük (özellikle mevcut böbrek hastalığı olanlarda).</li>
+                <li>Mide-bağırsak rahatsızlıkları (şiddetli kramp, ishal, bulantı).</li>
+                <li>Dehidrasyon riski.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="doz-bilgisi danger">
+      <h6>DİKKAT:</h6>
+      <div class="not-metin kirmizi">
+        <strong>Tıbbi uyarı:</strong><br>
+        Mevcut böbrek hastalığı olanlar kullanmadan önce mutlaka doktora danışmalıdır.
+      </div>
+    </div>
+
   </div>
+
+  <div class="disclaimer">
+    Uyarı: Bu hesaplayıcıdaki bilgiler genel rehber niteliğindedir ve tıbbi tavsiye yerine geçmez. Sağlık durumunuz veya supplement kullanımı hakkında karar vermeden önce daima bir sağlık profesyoneline danışın.
+  </div>
+</div>

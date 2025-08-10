@@ -1,0 +1,126 @@
+<div id="arjinin" class="section">
+  <h3>Arjinin (L-Arjinin)</h3>
+
+  <input type="number" id="a_kilo" placeholder="Kilonuz (kg)" onkeyup="if(event.keyCode === 13) hesaplaArjinin()" />
+  <span id="a_kilo_warning" class="input-warning"></span>
+  <button onclick="hesaplaArjinin()">Hesapla</button>
+  <div id="arjininSonuc" class="result"></div>
+
+  <div class="supplement-section-info">
+
+    <!-- Bilgilendirme -->
+    <div class="info-section">
+      <h5 class="info-header">Arjinin Hakkında Bilgi:</h5>
+      <div class="not-metin">
+        <strong>Ne işe yarar:</strong> Nitrik oksit (NO) üretimini destekleyerek damarları genişletir, kan akışını ve “pump” etkisini artırır; dayanıklılığa katkı sağlayabilir.<br>
+        <strong>Nasıl kullanılır:</strong> Önerilen miktar, antrenmandan 30–60 dakika önce 3–6 gram alınmasıdır.<br>
+        <strong>Etkisi ne zaman görülür:</strong> Akut etki 30–60 dakika içinde hissedilebilir; düzenli kullanım şart değildir.
+      </div>
+    </div>
+
+  <!-- SSS -->
+<div class="faq-section">
+  <h5 class="faq-header">Sıkça Sorulan Sorular:</h5>
+  <div class="accordion-container">
+
+    <!-- 1. Sağlığa zararlı mı? -->
+    <div class="accordion-item">
+      <button class="accordion-header">Arjinin sağlığa zararlı mı?</button>
+      <div class="accordion-content">
+        <div class="not-metin">
+          <ul>
+            <li>Önerilen dozlarda genel olarak güvenlidir.</li>
+            <li>Yüksek dozlarda mide rahatsızlığı, bulantı, ishal görülebilir.</li>
+            <li>Tansiyonu düşük olanlar ve tansiyon ilacı kullananlar dikkatli olmalıdır.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Sitrülin ile farkı nedir? -->
+    <div class="accordion-item">
+      <button class="accordion-header">Sitrülin ile farkı nedir?</button>
+      <div class="accordion-content">
+        <div class="not-metin">
+          <ul>
+            <li>Sitrülin, vücutta arjinine dönüştüğü için plazma arjinin seviyelerini yükseltmede genellikle daha etkilidir.</li>
+            <li>Ağızdan alınan arjinin, sindirim sistemi ve karaciğerde büyük oranda parçalanır (first-pass etkisi), bu nedenle hedefe ulaşan miktar sınırlıdır.</li>
+            <li>Çalışmalar, sporcularda pump ve performans artışı için 6–8 g sitrülin malatın 3–6 g arjinine kıyasla daha tutarlı sonuç verdiğini göstermektedir.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Neden bazı sporcular arjinin yerine sitrülin tercih eder? -->
+    <div class="accordion-item">
+      <button class="accordion-header">Neden bazı sporcular arjinin yerine sitrülin tercih eder?</button>
+      <div class="accordion-content">
+        <div class="not-metin">
+          <ul>
+            <li>Sitrülin, sindirimde parçalanmadan kana karışır ve arjinin seviyelerini yükseltir.</li>
+            <li>Daha uzun süreli nitrik oksit desteği sağlar, “pump” etkisi antrenman boyunca korunabilir.</li>
+            <li>Mide hassasiyeti yaşayan sporcular sitrülin ile genelde daha iyi tolere eder.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Mide rahatsızlığı normal mi? -->
+    <div class="accordion-item">
+      <button class="accordion-header">Mide rahatsızlığı normal mi?</button>
+      <div class="accordion-content">
+        <div class="not-metin">
+          <ul>
+            <li>Evet, özellikle yüksek dozlarda şişkinlik, bulantı veya ishal görülebilir.</li>
+            <li>Dozu azaltmak, gün içine bölmek veya hafif bir öğünle almak toleransı artırabilir.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <!-- Doz Bilgisi -->
+    <div class="doz-bilgisi">
+      <h6>Doz Aşımı (Hafifçe Yüksek Alım):</h6>
+      <ul class="not-maddeler">
+        <li><span class="turuncu">Olası Olumsuz Etkileri:</span>
+          <ul>
+            <li>Mide rahatsızlığı, bulantı, gevşek dışkılama/ishal.</li>
+            <li>Duyarlı kişilerde hafif tansiyon düşüşü ve baş dönmesi.</li>
+          </ul>
+        </li>
+        <li><span class="yesil">Olası Olumlu Etkileri:</span>
+          <ul>
+            <li>Daha belirgin “pump” hissi.</li>
+            <li>Kan akışında ve egzersiz sırasında hissedilen dayanıklılıkta artış.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="doz-bilgisi danger">
+      <h6>Aşırı Doz Aşımı (Çok Yüksek ve Uzun Süreli Alım):</h6>
+      <ul class="not-maddeler">
+        <li><strong>Günlük 20 gram üzeri ve uzun süreli kullanım:</strong>
+          <ul>
+            <li><span class="kirmizi">Olumsuz Etkileri:</span>
+              <ul>
+                <li>Şiddetli mide-bağırsak rahatsızlığı (kramp, kusma, ishal).</li>
+                <li>Belirgin tansiyon düşüşü; baş dönmesi, bayılma riski.</li>
+                <li>Elektrolit ve sıvı dengesizliği.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Uyarı -->
+  <div class="disclaimer">
+    Uyarı: Bu hesaplayıcıdaki bilgiler genel rehber niteliğindedir ve tıbbi tavsiye yerine geçmez. Sağlık durumunuz veya supplement kullanımı hakkında karar vermeden önce daima bir sağlık profesyoneline danışın.
+  </div>
+</div>

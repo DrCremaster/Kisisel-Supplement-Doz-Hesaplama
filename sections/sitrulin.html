@@ -1,80 +1,156 @@
 <div id="sitrulin" class="section">
-    <h3>Sitrülin Malat</h3>
-    <input type="number" id="s_kilo" placeholder="Kilonuz (kg)" onkeyup="if(event.keyCode === 13) hesaplaSitrulin()" />
-    <span id="s_kilo_warning" class="input-warning"></span>
-    <button onclick="hesaplaSitrulin()">Hesapla</button>
-    <div id="sitrulinSonuc" class="result"></div>
-    <div class="supplement-section-info">
+  <h3>Sitrülin Malat</h3>
+  <input type="number" id="s_kilo" placeholder="Kilonuz (kg)" onkeyup="if(event.keyCode === 13) hesaplaSitrulin()" />
+  <span id="s_kilo_warning" class="input-warning"></span>
+  <button onclick="hesaplaSitrulin()">Hesapla</button>
+  <div id="sitrulinSonuc" class="result"></div>
+
+  <div class="supplement-section-info">
+
+    <!-- Bilgilendirme -->
+    <div class="info-section">
       <h5 class="info-header">Sitrülin Malat Hakkında Bilgi:</h5>
       <div class="not-metin">
-        <strong>Ne işe yarar:</strong> Vücutta nitrik oksit (NO) üretimini destekler. Nitrik oksit(NO), kan akışını iyileştirir, antrenman sırasında "pump" hissini artırır, kaslara besin ve oksijen iletimini destekler ve yorgunluğu geciktirir.
-        <br><strong>Nasıl kullanılır:</strong> Genellikle antrenmandan 30-60 dakika önce alınır. Dinlenme günlerinde alınması zorunlu değildir ancak genel dolaşım sağlığı ve toparlanma için saf L-Sitrülin (yaklaşık 1-3 gram) düşünülebilir.
-        <br><strong>Etkisi ne zaman görülür:</strong> İlk kullanımdan itibaren 30-60 dakika içinde etkileri (pump, dayanıklılık) hissedilebilir. Düzenli kullanımda daha belirginleşir.
+        <strong>Ne işe yarar:</strong> Vücutta nitrik oksit (NO) üretimini destekler, kan akışını iyileştirir, antrenman sırasında "pump" hissini artırır, kaslara besin ve oksijen iletimini destekler ve yorgunluğu geciktirir.
+        <br><strong>Nasıl kullanılır:</strong> Genellikle antrenmandan 30–60 dakika önce alınır. Dinlenme günlerinde alınması zorunlu değildir ancak genel dolaşım sağlığı ve toparlanma için saf L-Sitrülin (yaklaşık 1–3 gram) düşünülebilir.
+        <br><strong>Etkisi ne zaman görülür:</strong> İlk kullanımdan itibaren 30–60 dakika içinde etkileri (pump, dayanıklılık) hissedilebilir. Düzenli kullanımda daha belirginleşir.
       </div>
-      
-      <h5 class="info-header">Sıkça Sorulan Sorular:</h5>
-      <div class="not-metin">
-        <strong>Sitrülin'in kan basıncına etkisi nedir?</strong><br>
-        Sitrülin, damarları genişleten nitrik oksit (NO) üretimini artırır. Bu etki, kan akışını iyileştirirken kan basıncını hafifçe düşürebilir. Tansiyon ilacı kullanan veya düşük tansiyonu olan kişilerin dikkat etmesi önemlidir.
-        <br><br>
-        <strong>Sitrülin Malat ile Saf L-Sitrülin farkı nedir?</strong><br>
-        Sitrülin Malat, Sitrülin amino asidi ve enerji döngüsüne (Krebs döngüsü) katılan <strong>Malik Asit</strong>in birleşimidir. Bu sayede Sitrülin Malat, hem "pump" hissini hem de enerji üretimini destekleyerek performansı artırır. Saf L-Sitrülin ise daha çok dolaşım sağlığına odaklanır.
-        <br><br>
-        <strong>Mide bulantısı normal mi?</strong><br>
-        Evet, yüksek dozda alımlarda hafif mide rahatsızlığı veya bulantı görülebilir. Bu normal bir yan etkidir.
-        <br><br>
-        <strong>Tadı neden ekşi?</strong><br>
-        Sitrülin Malat, içeriğindeki malik asit nedeniyle doğal olarak ekşi bir tada sahiptir. Bu, ürünün bozuk olduğu anlamına gelmez.
-        <br><br>
-        <strong>Dinlenme günlerinde de alınmalı mı?</strong><br>
-        Performans artışı için sadece antrenman günleri yeterlidir. Ancak genel dolaşım sağlığı için saf L-Sitrülin formunun (yaklaşık 1-3 gram) dinlenme günlerinde de alınması faydalı olabilir.
-      </div>
+    </div>
 
-      <div class="doz-bilgisi">
-        <h6>Doz Aşımı (Hafifçe Yüksek Alım):</h6>
-        <ul class="not-maddeler">
-          <li><span class="turuncu">Olası Olumsuz Etkileri:</span>
-            <ul>
-              <li>Mide rahatsızlığı, hafif bulantı veya ishal (özellikle yüksek dozlarda).</li>
-              <li>Tansiyonda hafif düşüş (özellikle hassas kişilerde).</li>
-            </ul>
-          </li>
-          <li><span class="yesil">Olası Olumlu Etkileri:</span>
-            <ul>
-              <li>Daha yoğun "pump" hissi ve kan akışında potansiyel olarak ek iyileşme.</li>
-              <li>Yorgunluğun daha belirgin bir şekilde gecikmesi.</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="doz-bilgisi danger">
-        <h6>Aşırı Doz Aşımı (Çok Yüksek ve Uzun Süreli Alım):</h6>
-        <ul class="not-maddeler">
-          <li><strong>Günlük 20 gram üzeri ve uzun süreli kullanım:</strong>
-            <ul>
-              <li><span class="kirmizi">Olumsuz Etkileri:</span>
-				  <ul>
-					  <li>Şiddetli mide rahatsızlığı, bulantı, kusma, ishal.</li>
-					  <li>Belirgin tansiyon düşüşü (hipotansiyon) ve buna bağlı baş dönmesi, bayılma.</li>
-					  <li>Elektrolit dengesizlikleri.</li>
-				  </ul>
-			  </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="doz-bilgisi danger">
-        <h6>DİKKAT:</h6>
-        <div class="not-metin kirmizi">
-          <strong>Tıbbi uyarı:</strong>
-          <ul style="margin-top: 5px; padding-left: 20px;">
-              <li>Tansiyon ilacı kullananlar ve düşük tansiyon problemi olanlar dikkatli olmalıdır, kan basıncını düşürebilir.</li>
-              <li>Nitrik oksit takviyeleri ile birlikte kullanılacaksa dikkatli olunmalıdır.</li>
-          </ul>
+    <!-- SSS -->
+    <div class="faq-section">
+      <h5 class="info-header">Sıkça Sorulan Sorular:</h5>
+      <div class="accordion-container">
+
+        <!-- 1. Sağlığa zararlı mı? -->
+        <div class="accordion-item">
+          <button class="accordion-header">Sitrülin Malat sağlığa zararlı mı?</button>
+          <div class="accordion-content">
+            <div class="not-metin">
+              <ul>
+                <li>Önerilen dozlarda alındığında genellikle güvenlidir.</li>
+                <li>Yüksek dozlarda mide rahatsızlığı, bulantı ve tansiyon düşüklüğü görülebilir.</li>
+                <li>Tansiyon ilacı kullananlar veya hipotansiyonu olanlar dikkatli olmalıdır.</li>
+              </ul>
+            </div>
+          </div>
         </div>
+
+        <!-- 2. Kan basıncına etkisi -->
+        <div class="accordion-item">
+          <button class="accordion-header">Sitrülin'in kan basıncına etkisi nedir?</button>
+          <div class="accordion-content">
+            <div class="not-metin">
+              <ul>
+                <li>Sitrülin, damarları genişleten nitrik oksit (NO) üretimini artırır. Bu etki, kan akışını iyileştirirken kan basıncını hafifçe düşürebilir.</li>
+                <li>Tansiyon ilacı kullanan veya düşük tansiyonu olan kişilerin dikkat etmesi önemlidir.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Sitrülin Malat vs Saf L-Sitrülin -->
+        <div class="accordion-item">
+          <button class="accordion-header">Sitrülin Malat ile Saf L-Sitrülin farkı nedir?</button>
+          <div class="accordion-content">
+            <div class="not-metin">
+              <ul>
+                <li>Sitrülin Malat, Sitrülin amino asidi ve enerji döngüsüne (Krebs döngüsü) katılan <strong>Malik Asit</strong>in birleşimidir. Bu sayede Sitrülin Malat, hem "pump" hissini hem de enerji üretimini destekleyerek performansı artırır.</li>
+                <li>Saf L-Sitrülin ise daha çok dolaşım sağlığına odaklanır.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Mide bulantısı -->
+        <div class="accordion-item">
+          <button class="accordion-header">Mide bulantısı normal mi?</button>
+          <div class="accordion-content">
+            <div class="not-metin">
+              <ul>
+                <li>Evet, yüksek dozda alımlarda hafif mide rahatsızlığı veya bulantı görülebilir. Bu normal bir yan etkidir.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Tadı neden ekşi? -->
+        <div class="accordion-item">
+          <button class="accordion-header">Tadı neden ekşi?</button>
+          <div class="accordion-content">
+            <div class="not-metin">
+              <ul>
+                <li>Sitrülin Malat, içeriğindeki malik asit nedeniyle doğal olarak ekşi bir tada sahiptir. Bu, ürünün bozuk olduğu anlamına gelmez.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Dinlenme günlerinde alınmalı mı? -->
+        <div class="accordion-item">
+          <button class="accordion-header">Dinlenme günlerinde de alınmalı mı?</button>
+          <div class="accordion-content">
+            <div class="not-metin">
+              <ul>
+                <li>Performans artışı için sadece antrenman günleri yeterlidir.</li>
+                <li>Ancak genel dolaşım sağlığı için saf L-Sitrülin formunun (yaklaşık 1–3 gram) dinlenme günlerinde de alınması faydalı olabilir.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div class="disclaimer">
-      Uyarı: Bu hesaplayıcıdaki bilgiler genel rehber niteliğindedir ve tıbbi tavsiye yerine geçmez. Sağlık durumunuz veya supplement kullanımı hakkında karar vermeden önce daima bir sağlık profesyoneline danışın.
+
+    <!-- Doz Bilgisi -->
+    <div class="doz-bilgisi">
+      <h6>Doz Aşımı (Hafifçe Yüksek Alım):</h6>
+      <ul class="not-maddeler">
+        <li><span class="turuncu">Olası Olumsuz Etkileri:</span>
+          <ul>
+            <li>Mide rahatsızlığı, hafif bulantı veya ishal (özellikle yüksek dozlarda).</li>
+            <li>Tansiyonda hafif düşüş (özellikle hassas kişilerde).</li>
+          </ul>
+        </li>
+        <li><span class="yesil">Olası Olumlu Etkileri:</span>
+          <ul>
+            <li>Daha yoğun "pump" hissi ve kan akışında potansiyel olarak ek iyileşme .</li>
+            <li>Fazladan ATP(enerji).</li>
+            <li>Yorgunluğun daha belirgin bir şekilde gecikmesi.</li>
+          </ul>
+        </li>
+      </ul>
     </div>
+
+    <div class="doz-bilgisi danger">
+      <h6>Aşırı Doz Aşımı (Çok Yüksek ve Uzun Süreli Alım):</h6>
+      <ul class="not-maddeler">
+        <li><strong>Günlük 20 gram üzeri ve uzun süreli kullanım:</strong>
+          <ul>
+            <li><span class="kirmizi">Olumsuz Etkileri:</span>
+              <ul>
+                <li>Şiddetli mide rahatsızlığı, bulantı, kusma, ishal.</li>
+                <li>Belirgin tansiyon düşüşü (hipotansiyon) ve buna bağlı baş dönmesi, bayılma.</li>
+                <li>Elektrolit dengesizlikleri.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="doz-bilgisi danger">
+      <h6>DİKKAT:</h6>
+      <div class="not-metin kirmizi">
+        <strong>Tıbbi uyarı:</strong>
+        <ul style="margin-top: 5px; padding-left: 20px;">
+          <li>Tansiyon ilacı kullananlar ve düşük tansiyon problemi olanlar dikkatli olmalıdır, kan basıncını düşürebilir.</li>
+          <li>Nitrik oksit takviyeleri ile birlikte kullanılacaksa dikkatli olunmalıdır.</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
+
+  <div class="disclaimer">
+    Uyarı: Bu hesaplayıcıdaki bilgiler genel rehber
