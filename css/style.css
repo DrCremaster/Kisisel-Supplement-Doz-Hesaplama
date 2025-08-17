@@ -302,7 +302,7 @@ button:active {
     display: none;
     margin-top: 25px;
     padding-top: 20px;
-    animation: fadeIn 0.5s ease forwards;
+    animation: fadeIn 2s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -1223,4 +1223,28 @@ html[data-theme='dark'] .accordion-header:hover, html[data-theme='dark'] .accord
 html[data-theme='dark'] .accordion-content {
     background-color: transparent;
     color: var(--text-color);
+}
+
+/* Birikimli Etki Vurgusu */
+.birikimli-vurgu {
+    font-weight: bold;
+    color: #4CAF50; /* Canlı yeşil rengi */
+}
+
+/* Akut Etki Vurgusu */
+.akut-vurgu {
+    font-weight: bold;
+    color: #F44336;
+}
+
+/* Uzun Vade Etki Vurgusu */
+.uzun-vade-vurgu {
+    font-weight: bold;
+    color: #9C27B0;
+}
+
+/* Karma Etki Vurgusu */
+.karma-vurgu {
+    font-weight: bold;
+    color: #FF9800;
 }
