@@ -191,11 +191,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     section.style.opacity = "1";
                 }, 10);
-
-                const firstInput = section.querySelector('input:not([type="hidden"]), select');
-                if (firstInput) {
-                    firstInput.focus();
-                }
+                
+                // Buradaki otomatik odaklama kodu, klavyenin açılmasına neden oluyordu.
+                // İsteğiniz üzerine bu kısım kaldırıldı.
+                // const firstInput = section.querySelector('input:not([type="hidden"]), select');
+                // if (firstInput) {
+                //     firstInput.focus();
+                // }
             }
 
             const accordionHeaders = document.querySelectorAll('.accordion-header');
