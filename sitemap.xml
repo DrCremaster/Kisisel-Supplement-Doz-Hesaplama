@@ -4,29 +4,107 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/</loc>
-  <lastmod>2025-08-25T16:31:45+00:00</lastmod>
+  <lastmod>2025-08-25</lastmod>
   <priority>1.00</priority>
 </url>
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/kaynakca.html</loc>
-  <lastmod>2025-08-25T16:31:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/feedback.html</loc>
-  <lastmod>2025-08-25T16:31:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+
 <url>
   <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/index.html</loc>
-  <lastmod>2025-08-25T16:31:45+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.90</priority>
 </url>
 
+<url>
+  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/kaynakca.html</loc>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/feedback.html</loc>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/protein.html</loc>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/kreatin.html</loc>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/kafein.html</loc>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/karnitin.html</loc>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/sitrulin.html</loc>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/beta.html</loc>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/eaa.html</loc>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/bcaa.html</loc>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/arjinin.html</loc>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/glutamin.html</loc>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/yag.html</loc>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/kreatinin.html</loc>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/topluSupplement.html</loc>
+  <lastmod>2025-08-25</lastmod>
+  <priority>0.80</priority>
+</url>
 
 </urlset>
