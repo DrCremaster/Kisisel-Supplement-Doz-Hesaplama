@@ -1,32 +1,64 @@
 # 🧠 Kişisel Supplement & Sağlık Verisi Hesaplama Sistemi
 
 Kilo bazlı, bilimsel ve sade.  
-Bu sistem; supplement dozlarını ve bazı sağlık verilerini kişiye özel hesaplar. Her supplement modülü, güncel kaynaklarla desteklenmiştir. Gereksiz bilgi yok, sadece işlev.
+Bu sistem; supplement dozlarını ve bazı sağlık verilerini kişiye özel hesaplar. Her supplement modülü, güncel kaynaklarla desteklenmiştir. 
+Doz aşımları vurgulanmış formüller açıklanış öğretici sistem.
+
+---
 
 ## 🚀 Ne Sunar?
 
 - Kilonu gir → Dozunu al  
 - Her supplement için ayrı modül  
-- Sağlık hesaplamaları (VKİ, Yağ Oanı, Kan kreatinin tahmini)  
-- Tüm suplement verileri bilimsel kaynaklarla destekli  
+- Sağlık hesaplamaları (VKİ, Yağ Oranı, Kan kreatinin tahmini)
+- Doz aşım bilgileri
+- Supplementler için açık formüller 
+- Tüm supplement verileri bilimsel kaynaklarla destekli
+- Geri bildirim özelliği 
 - Kaynakça sayfasında tüm referanslar açıkça listelenmiş
+
+---
 
 ## 🔍 Neden Farklı?
   
 - Kişisel protokol mantığıyla çalışan sistem
-- Doj aşım bilgileri
-- Bilimsel doğruluk + kullanıcı deneyimi bir arada
+- Doz aşım ve güvenlik bilgileri özel olarak vurgulanır
+- Formüller açık öğretici
+- Bilimsel doğruluk + sade kullanıcı deneyimi bir arada
 
-## 📚 Bilimsel Temel
+---
 
-Her supplement hesaplaması:
-- Güncel PubMed vb. çalışmalarıyla desteklenir  
-- Kaynakça sayfasında referanslarıyla birlikte yer alır
+## 📲 Kullanım
+
+Sadece ilgili supplement’i seçin ve kilonuzu girin, dozunuzu hemen öğrenin. Ekstra kurulum, üyelik veya veri girişi gerektirmez.
+
+---
 
 ## 🧪 Kimler İçin?
 
 - Sporcular  
 - Sağlık profesyonelleri  
-- Kendi protokolünü oluşturmak isteyen herkes
+- Kendi protokolünü oluşturmak isteyen herkes  
+
+---
+
+## 📚 Bilimsel Temel
+
+- Her supplement hesaplaması güncel PubMed ve literatür çalışmalarıyla desteklenir  
+- [Kaynakça sayfası](https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/kaynakca.html) üzerinden tüm referanslara ulaşabilirsiniz
+
+---
+
+## 🏷️ Lisans ve Uyarı
+
+MIT Lisansı  
+**Yasal uyarı:** Bu proje tıbbi tavsiye yerine geçmez. Bilimsel kaynaklar referans amaçlıdır, uygulama öncesi mutlaka profesyonel görüş alın.
+
+---
+
+## ✨ Katkı
+
+- Pull request ve issue açarak katkı verebilirsin.
+- Yeni supplement modülleri veya hesaplama eklentileri ekleyebilirsin.
 
 ---
