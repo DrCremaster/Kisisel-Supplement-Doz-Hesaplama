@@ -1,0 +1,15 @@
+Copyright (c) 2025 DrCremaster
+
+This software and all associated source code are provided for review and educational purposes only.
+All rights reserved.
+Copying, distributing, modifying, publishing, or using the software or code in any way is strictly prohibited without explicit written permission from DrCremaster.
+You may study and understand the logic of the code, but you may not use, copy, or distribute it (in whole or in part) without permission.
+
+---
+
+Telif Hakkı (c) 2025 DrCremaster
+
+Bu yazılımın ve kaynak kodlarının tamamı sadece inceleme ve eğitim amaçlı paylaşılmıştır.
+Tüm hakları saklıdır.
+Yazılımın veya kodun herhangi bir şekilde kopyalanması, dağıtılması, değiştirilmesi, yayımlanması veya kullanılması DrCremaster'ın açık yazılı izni olmadan kesinlikle yasaktır.
+Kodun mantığını incelemek ve öğrenmek serbesttir; ancak kodun tamamının veya bir kısmının izinsiz olarak kullanılması, kopyalanması veya dağıtılması kesinlikle yasaktır.
