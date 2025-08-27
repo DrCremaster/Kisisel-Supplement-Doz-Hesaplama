@@ -5,106 +5,440 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>1.00</priority>
-</url>
+  <!-- Site içi sayfalar -->
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>1.00</priority>
+    <changefreq>weekly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/index.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.90</priority>
-</url>
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/kaynakca.html</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.90</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/kaynakca.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/feedback.html</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/feedback.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/protein.html</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/protein.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/kreatin.html</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/kreatin.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/kafein.html</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/kafein.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/karnitin.html</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/karnitin.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/sitrulin.html</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/sitrulin.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/beta.html</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/beta.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/eaa.html</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/eaa.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/bcaa.html</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/bcaa.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/arjinin.html</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/arjinin.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/glutamin.html</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/glutamin.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/yag.html</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/yag.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/kreatinin.html</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/kreatinin.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/topluSupplement.html</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
-<url>
-  <loc>https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/topluSupplement.html</loc>
-  <lastmod>2025-08-25</lastmod>
-  <priority>0.80</priority>
-</url>
+  <!-- Kaynakçada listelenen dış makale/derleme linkleri (tekil hâlde) -->
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/28698222/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/21262048/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/24092765/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/29497353/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://doi.org/10.1093/jn/nxy023</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/26817506/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/28522363/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/28615996/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/36423984/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://doi.org/10.1519/1533-4287(2003)017%3C0106:LSEOCM%3E2.0.CO;2</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/22134272/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/17908291/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/10432360/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/30068048/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/20211210/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://doi.org/10.1016/j.yfrne.2017.04.002</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/30908889/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/33466487/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/20386132/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/11792871/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/27814751/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/22451437/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/20300003/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/17690198/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/29308661/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/21362068/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://doi.org/10.1152/japplphysiol.00356.2006</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/15591018/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/17366367/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/23806871/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://examine.com/supplements/branched-chain-amino-acids/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/14500908/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/22498267/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/28903914/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/31034463/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/27443196/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/16424424/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/19228965/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/18318260/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/21813912/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://examine.com/supplements/arginine/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/18500916/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/11093996/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/22080340/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pubmed.ncbi.nlm.nih.gov/30748186/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://examine.com/supplements/glutamine/</loc>
+    <lastmod>2025-08-25</lastmod>
+    <priority>0.50</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
 </urlset>
