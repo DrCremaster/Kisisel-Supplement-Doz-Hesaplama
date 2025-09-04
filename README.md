@@ -38,7 +38,7 @@ Sadece ilgili supplement’i seçin ve kilonuzu girin, dozunuzu hemen öğrenin.
 
 - Sporcular  
 - Sağlık profesyonelleri  
-- Kendi protokolünü oluşturmak isteyen herkes  
+- Sedanter bireyler için "değildir"!!!
 
 ---
 
