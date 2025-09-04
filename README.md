@@ -1,4 +1,4 @@
-# 🧠 Kişisel Supplement & Sağlık Verisi Hesaplama Sistemi
+# 🧠 Sporculara Özel Kişisel Supplement & Sağlık Verisi Hesaplama Sistemi
 
 Kilo bazlı, bilimsel ve sade.  
 Bu sistem; supplement dozlarını ve bazı sağlık verilerini kişiye özel hesaplar. Her supplement modülü, güncel kaynaklarla desteklenmiştir. 
