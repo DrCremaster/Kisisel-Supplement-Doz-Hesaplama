@@ -1,161 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kişisel Supplement Doz Hesaplayıcı</title>
-
-  <meta name="description" content="Protein, kreatin, kafein ve diğer supplement ihtiyaçlarınızı hesaplayan kapsamlı bilimsel supplement doz hesaplama aracı.">
-  <meta name="keywords" content="protein, kreatin, kafein, supplement, hesaplayıcı, doz, beta alanin, sitrulin, sitrulin malat, bilim, bilimsel, kişisel doz hesaplama, kilo bazlı doz, spor, fitness, preworkout, arjinin, bcaa, eaa, karnitin, glutamin, pubmed, hipertrofi, whey, supplement doz hesap">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Kişisel Supplement Doz Hesaplayıcı">
-  <meta property="og:description" content="Protein, kreatin, kafein ve diğer supplement ihtiyaçlarınızı hesaplayan kapsamlı fitness aracı.">
-  <meta property="og:image" content="https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/icons/onizleme.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="1200">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:url" content="https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/">
-  <meta property="og:site_name" content="Fitness Hesaplayıcı">
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kişisel Supplement Doz Hesaplayıcı">
-  <meta name="twitter:description" content="Protein, kreatin, kafein ve diğer supplement ihtiyaçlarınızı hesaplayan kapsamlı fitness aracı.">
-  <meta name="twitter:image" content="https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/icons/onizleme.jpg">
-  <meta name="twitter:site" content="@kullanici_adiniz">
-  
-  <meta property="og:image:secure_url" content="https://drcremaster.github.io/Kisisel-Supplement-Doz-Hesaplama/icons/onizleme.jpg">
-  <meta name="theme-color" content="#3b5998">
-  
-  <link rel="stylesheet" href="css/style.css">
-
-  <link rel="icon" type="image/png" href="favicon.png">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1220">
+<title>SupplementLab — Kişisel Supplement Hesaplayıcı</title>
+<meta name="description" content="Protein, kreatin, kafein ve diğer supplement hesaplayıcılarını ve bilgilendirici içerikleri tek yerde sunan kişisel araç seti.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="app.css">
 </head>
-
-<body class="anapage">
-
-  <div class="container">
-    <div class="modern-theme-toggle-container">
-      <button id="themeToggleButton" class="modern-theme-toggle">
-        <span class="modern-theme-toggle-icon"></span>
-        <span class="button-text">Koyu Temaya Geç</span>
-      </button>
+<body>
+<div class="site-shell">
+  <aside class="desktop-sidebar" aria-label="Ana navigasyon">
+    <div class="brand">
+      <div class="brand-logo">SL</div>
+      <div><strong>SupplementLab</strong><small>Kişisel hesaplayıcılar</small></div>
     </div>
-
-    <h2>Kişisel Supplement Doz Hesaplayıcı</h2>
-
-    <div id="dropdownMenu" class="dropdown-container">
-      <h3 id="dropdownButton" class="dropdown-button">
-        <span class="dropdown-icon-wrapper">
-          <img src="icons/hesaplamasec.jpg" alt="Hesaplama" class="dropdown-icon-img">
-          <span class="dropdown-text">Hesaplama Türü Seçiniz</span>
-        </span>
-        <span class="dropdown-arrow">&#9660;</span>
-      </h3>
-      <div id="dropdownContent" class="dropdown-content">
-        <ul id="hesapListesi">
-          <li data-value="home">
-            <img src="icons/anasayfa.jpg" alt="Ana Sayfa" class="menu-icon-img">
-            <span class="menu-text">Ana Sayfa</span>
-          </li>
-          <li data-value="hepsi">
-            <img src="icons/hepsi.jpg" alt="Toplu Supplement" class="menu-icon-img">
-            <span class="menu-text">Toplu Supplement Hesaplama</span>
-          </li>
-          <li data-value="protein">
-            <img src="icons/protein.jpg" alt="Protein" class="menu-icon-img">
-            <span class="menu-text">Günlük Protein İhtiyacı</span>
-          </li>
-          <li data-value="kreatin">
-            <img src="icons/kreatin.jpg" alt="Kreatin" class="menu-icon-img">
-            <span class="menu-text">Kreatin</span>
-          </li>
-          <li data-value="kafein">
-            <img src="icons/kafein.jpg" alt="Kafein" class="menu-icon-img">
-            <span class="menu-text">Kafein</span>
-          </li>
-          <li data-value="sitrulin">
-            <img src="icons/sitrulin.jpg" alt="Sitrülin" class="menu-icon-img">
-            <span class="menu-text">Sitrülin Malat</span>
-          </li>
-          <li data-value="beta">
-            <img src="icons/beta.jpg" alt="Beta Alanin" class="menu-icon-img">
-            <span class="menu-text">Beta Alanin</span>
-          </li>
-          <li data-value="karnitin">
-            <img src="icons/karnitin.jpg" alt="Karnitin" class="menu-icon-img">
-            <span class="menu-text">L-Karnitin</span>
-          </li>
-          <li data-value="eaa">
-            <img src="icons/eaa.jpg" alt="EAA" class="menu-icon-img">
-            <span class="menu-text">EAA</span>
-          </li>
-          <li data-value="bcaa">
-            <img src="icons/bcaa.jpg" alt="BCAA" class="menu-icon-img">
-            <span class="menu-text">BCAA</span>
-          </li>
-          <li data-value="arjinin">
-            <img src="icons/arjinin.jpg" alt="Arjinin" class="menu-icon-img">
-            <span class="menu-text">Arjinin</span>
-          </li>
-          <li data-value="glutamin">
-            <img src="icons/glutamin.jpg" alt="Glutamin" class="menu-icon-img">
-            <span class="menu-text">Glutamin</span>
-          </li>
-          <li data-value="yag">
-            <img src="icons/yag.jpg" alt="Yağ" class="menu-icon-img">
-            <span class="menu-text">Yağ & VKİ</span>
-          </li>
-          <li data-value="kreatinin">
-            <img src="icons/kreatinin.jpg" alt="Kreatinin" class="menu-icon-img">
-            <span class="menu-text">Kreatinin Tahmini</span>
-          </li>
-        </ul>
+    <button id="sideHome" class="home-link" data-route="home"><span>⌂</span> Ana sayfa</button>
+    <div class="nav-section-title">HESAPLAYICILAR</div>
+    <nav id="desktopNav" class="nav-list"></nav>
+    <div class="sidebar-footer">
+      <button id="desktopTheme" class="theme-switch"><span>◐</span><span id="desktopThemeText">Koyu tema</span></button>
+      <div class="resource-links" aria-label="Site bağlantıları">
+        <a class="resource-link" href="kaynakca.html" target="_blank" rel="noopener" title="Kaynakça" aria-label="Kaynakça">
+          <img src="icons/kaynakca.jpg" alt="">
+          <span>Kaynakça</span>
+        </a>
+        <a class="resource-link" href="feedback.html" target="_blank" rel="noopener" title="Öneri / Şikayet" aria-label="Öneri / Şikayet">
+          <img src="icons/oneri_sikayet.jpg" alt="">
+          <span>Öneri / Şikayet</span>
+        </a>
       </div>
     </div>
+  </aside>
 
-    <main class="main-scroll-content">
-        <div id="contentSections"></div>
-    </main>
+  <header class="mobile-header">
+    <button id="mobileMenuBtn" class="mobile-icon" aria-label="Menüyü aç">☰</button>
+    <div class="mobile-title">SupplementLab</div>
+    <button id="mobileTheme" class="mobile-icon" aria-label="Temayı değiştir">◐</button>
+  </header>
 
-    <div id="initialDisclaimer" class="general-disclaimer-new">
-        <h4 class="disclaimer-title">Önemli Tıbbi Feragatname</h4>
-        <p class="disclaimer-text">
-            Bu hesaplayıcıdaki tüm bilgiler genel rehber niteliğindedir ve tıbbi tavsiye yerine geçmez. Sağlık durumunuz, diyetiniz veya supplement kullanımınız hakkında herhangi bir karar vermeden önce daima nitelikli bir sağlık profesyoneline (doktor, diyetisyen vb.) danışmanız ŞARTTIR.
-        </p>
+  <div id="mobileDrawer" class="mobile-drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close-drawer></div>
+    <div class="drawer-panel">
+      <div class="drawer-head"><strong>Hesaplayıcılar</strong><button class="drawer-close" data-close-drawer>×</button></div>
+      <button class="drawer-home" data-route="home" data-close-drawer>⌂ Ana sayfa</button>
+      <nav id="mobileNav" class="nav-list"></nav>
+      <div class="drawer-links">
+        <a class="resource-link" href="kaynakca.html" target="_blank" rel="noopener">
+          <img src="icons/kaynakca.jpg" alt=""><span>Kaynakça</span>
+        </a>
+        <a class="resource-link" href="feedback.html" target="_blank" rel="noopener">
+          <img src="icons/oneri_sikayet.jpg" alt=""><span>Öneri / Şikayet</span>
+        </a>
+      </div>
     </div>
-
-    <footer>
-      <div class="footer-link">
-          <a href="kaynakca.html" target="_blank">Kaynakça</a>
-      </div>
-      <div class="footer-link">
-          <a href="feedback.html" target="_blank">Öneri ve Şikayet</a>
-      </div>
-      <p>&copy; 2025 Fitness Hesaplayıcı. Tüm Hakları Saklıdır.</p>
-    </footer>
   </div>
 
-  <div class="page-bottom-spacer"></div>
+  <main>
+    <section id="homeView" class="view active">
+      <div class="topline">
+        <div><div class="kicker">KİŞİSELLEŞTİRİLMİŞ ARAÇ SETİ</div><h1>Supplement bilgisi artık daha<br><span>akıcı, görsel ve kullanışlı.</span></h1><p>Önce hedefini belirle, sonra ölçünü gir. Hesaplamayı gör; hemen altında bilgi kartları, vurgular ve sık sorulan sorularla konuyu keşfet.</p></div>
+        <div class="hero-art"><div class="hero-ring ring-a"></div><div class="hero-ring ring-b"></div><div class="hero-center"><b>13</b><span>ARAÇ</span></div></div>
+      </div>
+      <div class="section-title"><div><div class="kicker">ARAÇ KÜTÜPHANESİ</div><h2>İhtiyacın olanı seç</h2></div><span class="tool-count">13 araç</span></div>
+      <div id="homeCards" class="tool-cards"></div>
+      <div class="home-note"><strong>Bilgi:</strong> Hesaplamalar genel rehber niteliğindedir; kişisel sağlık durumları için profesyonel değerlendirme gerekir.</div>
+    </section>
 
-  <script src="js/common.js"></script>
-  <script src="js/betaHesaplayici.js"></script>
-  <script src="js/kafeinHesaplayici.js"></script>
-  <script src="js/karnitinHesaplayici.js"></script>
-  <script src="js/kreatinHesaplayici.js"></script>
-  <script src="js/kreatininTahminiHesaplayici.js"></script>
-  <script src="js/proteinHesaplayici.js"></script>
-  <script src="js/arjininHesaplayici.js"></script>
-  <script src="js/sitrulinHesaplayici.js"></script>
-  <script src="js/eaaHesaplayici.js"></script>
-  <script src="js/bcaaHesaplayici.js"></script>
-  <script src="js/glutaminHesaplayici.js"></script>
-  <script src="js/topluSupplementHesaplayici.js"></script>
-  <script src="js/yagOraniHesaplayici.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/theme.js"></script>
-  <script src="js/script.js"></script>
-  <script src="https://cdn.counter.dev/script.js" data-id="e48fee10-9ad6-405d-ab18-18c591dced37" data-utcoffset="3"></script>
+    <section id="toolView" class="view">
+      <div class="breadcrumb"><button data-route="home">← Ana sayfa</button><span>/</span><span id="crumbTitle">Hesaplayıcı</span></div>
+      <div id="sectionMount"></div>
+    </section>
+  </main>
+</div>
+<script src="data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/betaHesaplayici.js"></script>
+<script src="js/kafeinHesaplayici.js"></script>
+<script src="js/karnitinHesaplayici.js"></script>
+<script src="js/kreatinHesaplayici.js"></script>
+<script src="js/kreatininTahminiHesaplayici.js"></script>
+<script src="js/proteinHesaplayici.js"></script>
+<script src="js/arjininHesaplayici.js"></script>
+<script src="js/sitrulinHesaplayici.js"></script>
+<script src="js/eaaHesaplayici.js"></script>
+<script src="js/bcaaHesaplayici.js"></script>
+<script src="js/glutaminHesaplayici.js"></script>
+<script src="js/topluSupplementHesaplayici.js"></script>
+<script src="js/yagOraniHesaplayici.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
